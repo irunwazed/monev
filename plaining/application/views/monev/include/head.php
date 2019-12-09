@@ -1,3 +1,8 @@
+<?php
+if(!@$_SESSION['id']){
+  redirect(base_url("monev/logout"));
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -28,11 +33,137 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="<?=base_url()?>public/admin/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="<?=base_url()?>public/admin/plugins/toastr/toastr.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?=base_url()?>public/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 
-  <!-- toast -->
-  <link href="<?=base_url()?>public/admin/assets/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="<?=base_url()?>public/admin/assets/toastr/toastr.js"></script>
+
+  <style>
+  /* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 9999999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));
+
+  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+  </style>
 
 </head>
 
@@ -56,7 +187,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
+            <a href="<?=base_url("monev/logout")?>" class="dropdown-item">
               Logout
             </a>
           </div>
@@ -75,7 +206,7 @@
       <!-- Brand Logo -->
       <a href="<?=base_url()?>monev/beranda" class="brand-link">
         <img src="<?=base_url()?>public/admin/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">E-Monev</span>
       </a>
 
       <!-- Sidebar -->
@@ -119,6 +250,33 @@
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Import LRA
+                  <span></span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?=base_url("monev/evaluasi")?>" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Evaluasi
+                  <span></span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?=base_url("monev/user")?>" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  User
+                  <span></span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?=base_url("monev/misi")?>" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  RPJMD
                   <span></span>
                 </p>
               </a>
@@ -618,4 +776,4 @@
       </div>
       <!-- /.sidebar -->
     </aside>
-    <div id="myerror"></div>
+  <div id="myerror"></div>

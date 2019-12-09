@@ -6,12 +6,18 @@ class LraModel extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        $this->jumlah = 20;
+        $this->jumlah = 2000;
         $this->table = 'tb_monev_lra';
     }
 
     public function setQuery($post){
-        // $this->db->where('rek_jenis', $post['jenis']);
+        $kode = explode("-", @$post['kodeOpd']);
+        $this->db->where('tb_urusan_kode', $kode[0]);
+        $this->db->where('tb_bidang_kode', $kode[1]);
+        $this->db->where('tb_unit_kode', $kode[2]);
+        $this->db->where('tb_sub_unit_kode', $kode[3]);
+        $this->db->where('tb_monev_lra_tahun', $post['tahun']);
+        // print_r($post);
         
         $this->db->order_by($this->table.".tb_rekening1_kode", "ASC");
         $this->db->order_by($this->table.".tb_rekening2_kode", "ASC");

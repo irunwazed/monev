@@ -12,8 +12,8 @@ class LraController extends CI_Controller {
     public function view(){
         $data = array();
 
-        // $this->load->model('monev/DataModel');
-        // $data['dataOpd'] = $this->DataModel->getOpdJenis();
+        $this->load->model('monev/DataModel');
+        $data['dataOpd'] = $this->DataModel->selectAllOpd();
         // $data['dataOpdPilih'] = $this->DataModel->getOpdWithJenis($this->jenis);
         $foot['script'] = $this->load->view('monev/components/lra/script', $data, true);
 		
@@ -25,14 +25,16 @@ class LraController extends CI_Controller {
     public function getData($page = 1){
         $post = $this->input->post();
         $post['page'] = $page;
+        $tahun = $post['tahun'];
         $jumDataAll = 0;
         $jumlahDatainPage = 0;
         // $status = $this->filter->cekLogin($this->arr);
         $status = true;
 		if($status){
-            $data = $this->LraModel->getAll($post);
 
-            // $dataAll
+            $this->load->model('monev/DataModel');
+
+            $data = $this->LraModel->getAll($post);
             $jumDataAll = $this->LraModel->getCount($post);
             $jumlahDatainPage = $this->LraModel->getJumlahInPage();
             $jumlahPage = ceil($jumDataAll/$jumlahDatainPage);
@@ -40,8 +42,11 @@ class LraController extends CI_Controller {
             $data = array();
             $jumlahPage = 1;
         }
+        $dataOneOpd = $this->DataModel->selectOneOpdByKode($post['kodeOpd']);
 
         $kirim = array(
+            'tahun' => $tahun,
+            'dataOneOpd' => $dataOneOpd,
             'jumlahAll' => $jumDataAll,
             'jumlahPage' => $jumlahPage,
 			'data' => $data,

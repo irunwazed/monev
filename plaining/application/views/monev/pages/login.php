@@ -47,7 +47,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
@@ -61,8 +61,7 @@
 			</div>
 		</div>
 	</div>
-
-
+	
 	<div id="dropDownSelect1"></div>
 
 	<!--===============================================================================================-->

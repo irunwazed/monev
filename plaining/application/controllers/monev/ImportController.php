@@ -3,10 +3,11 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class ImportController extends CI_Controller {
     
-    private $data, $index, $no_kk;
+    private $data, $index, $no_kk, $hapus;
     public function __construct() {
         parent::__construct();
         $this->index = 1;
+        $this->hapus = true;
     } 
     
     public function viewImport(){
@@ -23,15 +24,143 @@ class ImportController extends CI_Controller {
             </form>';
     }
 
+    public function tb_rpjmd($set, $table = null){
+        $kode = (string)$set[0];
+        $kode = explode(".", $kode);
+        $post = $this->input->post();
+
+
+        // if($this->hapus){
+        //     // delete
+        //     $this->db->where('tb_monev_lra_tahun', $this->data['tb_monev_lra_tahun']);
+        //     $this->db->where('tb_urusan_kode', $post['tb_urusan_kode']);
+        //     $this->db->where('tb_bidang_kode', $post['tb_bidang_kode']);
+        //     $this->db->where('tb_unit_kode', $post['tb_unit_kode']);
+        //     $this->db->where('tb_sub_unit_kode', $post['tb_sub_unit_kode']);
+        //     $status = $this->db->delete($table);
+        // }
+        $this->data = array();
+        
+        if(is_numeric($kode[0])){
+            
+            
+            if(count($kode) == 1){
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_misi_nama'] = (string)$set[1];
+                
+                $this->db->insert('tb_rpjmd_misi', $this->data);
+
+            }else if(count($kode) == 2){
+                print_r($kode);
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_tujuan_nama'] = (string)$set[1];
+                
+                $this->db->insert('tb_rpjmd_tujuan', $this->data);
+            }else if(count($kode) == 3){
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_sasaran_kode'] = $kode[2];
+                $this->data['tb_rpjmd_sasaran_nama'] = (string)$set[1];
+                $this->data['tb_rpjmd_sasaran_indikator'] = (string)$set[2];
+                
+                $this->db->insert('tb_rpjmd_sasaran', $this->data);
+            }else if(count($kode) == 4){
+
+
+
+
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_sasaran_kode'] = $kode[2];
+                $this->data['tb_rpjmd_program_kode'] = $kode[3];
+                $this->data['tb_rpjmd_program_nama'] = (string)$set[1];
+                $this->data['tb_rpjmd_program_pagu_th1'] = (string)$set[9];
+                $this->data['tb_rpjmd_program_pagu_th2'] = (string)$set[11];
+                $this->data['tb_rpjmd_program_pagu_th3'] = (string)$set[13];
+                $this->data['tb_rpjmd_program_pagu_th4'] = (string)$set[15];
+                $this->data['tb_rpjmd_program_pagu_th5'] = (string)$set[17];
+                $this->data['id_tb_satuan'] = (string)$set[5];
+
+                $this->db->insert('tb_rpjmd_program', $this->data);
+
+                $this->data = array();
+
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_sasaran_kode'] = $kode[2];
+                $this->data['tb_rpjmd_program_kode'] = $kode[3];
+                $this->data['tb_rpjmd_program_indikator_kode'] = 1;
+                $this->data['tb_rpjmd_program_indikator_ket'] = (string)$set[1];
+                $this->data['tb_rpjmd_program_indikator_target_th1'] = (string)$set[8];
+                $this->data['tb_rpjmd_program_indikator_target_th2'] = (string)$set[10];
+                $this->data['tb_rpjmd_program_indikator_target_th3'] = (string)$set[12];
+                $this->data['tb_rpjmd_program_indikator_target_th4'] = (string)$set[14];
+                $this->data['tb_rpjmd_program_indikator_target_th5'] = (string)$set[16];
+                $this->data['id_tb_satuan'] = (string)$set[5];
+
+                $this->db->insert('tb_rpjmd_program_indikator', $this->data);
+            }else if(count($kode) == 5){
+
+                
+                $kodeOPD = explode(".", (string)$set[3]);
+
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_sasaran_kode'] = $kode[2];
+                $this->data['tb_rpjmd_program_kode'] = $kode[3];
+                $this->data['tb_urusan_kode'] = $kodeOPD[0];
+                $this->data['tb_bidang_kode'] = $kodeOPD[1];
+                $this->data['tb_unit_kode'] = $kodeOPD[2];
+                $this->data['tb_sub_unit_kode'] = $kodeOPD[3];
+
+                $this->db->insert('tb_rpjmd_opd', $this->data);
+
+                $this->data = array();
+
+                $this->data['id_tb_rpjmd'] = 1;
+                $this->data['tb_rpjmd_misi_kode'] = $kode[0];
+                $this->data['tb_rpjmd_tujuan_kode'] = $kode[1];
+                $this->data['tb_rpjmd_sasaran_kode'] = $kode[2];
+                $this->data['tb_rpjmd_program_kode'] = $kode[3];
+                $this->data['tb_renstra_kegiatan_kode'] = $kode[4];
+                $this->data['tb_urusan_kode'] = $kodeOPD[0];
+                $this->data['tb_bidang_kode'] = $kodeOPD[1];
+                $this->data['tb_unit_kode'] = $kodeOPD[2];
+                $this->data['tb_sub_unit_kode'] = $kodeOPD[3];
+                $this->data['tb_renstra_kegiatan_nama'] = (string)$set[1];
+                $this->data['tb_renstra_kegiatan_indikator'] = (string)$set[1];
+                $this->data['tb_renstra_kegiatan_awal'] = (string)$set[7];
+                $this->data['tb_renstra_kegiatan_target1'] = (string)$set[8];
+                $this->data['tb_renstra_kegiatan_anggaran1'] = (string)$set[9];
+                $this->data['tb_renstra_kegiatan_target2'] = (string)$set[10];
+                $this->data['tb_renstra_kegiatan_anggaran2'] = (string)$set[11];
+                $this->data['tb_renstra_kegiatan_target3'] = (string)$set[12];
+                $this->data['tb_renstra_kegiatan_anggaran3'] = (string)$set[13];
+                $this->data['tb_renstra_kegiatan_target4'] = (string)$set[14];
+                $this->data['tb_renstra_kegiatan_anggaran4'] = (string)$set[15];
+                $this->data['tb_renstra_kegiatan_target5'] = (string)$set[16];
+                $this->data['tb_renstra_kegiatan_anggaran5'] = (string)$set[17];
+                $this->data['tb_renstra_kegiatan_lokasi'] = (string)$set[20];
+                $this->data['id_tb_satuan'] = (string)$set[5];
+
+                $this->db->insert('tb_renstra_kegiatan', $this->data);
+            }
+
+
+            echo "<pre>";
+            print_r($this->data);
+            echo "</pre>";
+        }
+    }
+
     public function tb_monev_lra($set, $table = null){
-        // $this->data = array(
-        //     "tb_rekening1_kode" => (string)$set[1], 
-        //     "tb_rekening2_kode" => (string)$set[2], 
-        //     "tb_rekening3_kode" => (string)$set[3], 
-        //     "tb_rekening4_kode" => (string)$set[4], 
-        //     "tb_rekening5_kode" => (string)$set[5], 
-        // );
-        // $this->db->insert($table, $this->data);
         $kode = (string)$set[0];
         $kode = explode(".", $kode);
         $post = $this->input->post();
@@ -53,6 +182,17 @@ class ImportController extends CI_Controller {
         }
 
         $this->data['tb_monev_lra_tahun'] = @$post['tahun']?$post['tahun']:2019;
+
+        if($this->hapus){
+            // delete
+            $this->db->where('tb_monev_lra_tahun', $this->data['tb_monev_lra_tahun']);
+            $this->db->where('tb_urusan_kode', $post['tb_urusan_kode']);
+            $this->db->where('tb_bidang_kode', $post['tb_bidang_kode']);
+            $this->db->where('tb_unit_kode', $post['tb_unit_kode']);
+            $this->db->where('tb_sub_unit_kode', $post['tb_sub_unit_kode']);
+            $status = $this->db->delete($table);
+
+        }
         
         if((int)$kode[0] == 5){
             $rek = 0;
@@ -174,6 +314,7 @@ class ImportController extends CI_Controller {
                     $set[$i] = $worksheet->getCellByColumnAndRow($i, $row)->getValue();
                 }
                 $this->$post['table']($set, $post['table']);
+                $this->hapus = false;
                 array_push($data,$this->data);
                 $pesan = "Berhasil menyimpan data";
                 $status = true;

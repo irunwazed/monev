@@ -6,8 +6,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="pesan-judul"></h4>
+            <!-- <span aria-hidden="true">&times;</span></button> -->
+          <h4 class="modal-title" id="pesan-judul" style=""></h4>
         </div>
         <div class="modal-body" id="pesan-isi">
         </div>
@@ -21,6 +21,8 @@
     <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
+
+  <div class="loading" style="display: none;">Loading&#8230;</div>
 
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
@@ -66,6 +68,13 @@
 <script src="<?=base_url()?>public/admin/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="<?=base_url()?>public/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- DataTables -->
+<script src="<?=base_url()?>public/admin/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?=base_url()?>public/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- SweetAlert2 -->
+<script src="<?=base_url()?>public/admin/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="<?=base_url()?>public/admin/plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>public/admin/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -74,7 +83,12 @@
 <script src="<?=base_url()?>public/admin/dist/js/demo.js"></script>
 
 <script>
-        
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
         var base_url = '<?=base_url()?>';
 
         function sendAjax(url, dataKirim){
@@ -118,6 +132,7 @@
                 },
                     error:function(error){
                     loading(false);
+                $("#myerror").html(error.responseText);
                 }
             });
         }
@@ -151,18 +166,24 @@
             }
             });
         }
-
+        
         function loading(status = true){
             if(status){
-                $("#loading").text("loading");
+              $(".loading").show();
+                // $(".loading").text("loading");
             }else{
-                $("#loading").text("");
+              $(".loading").hide();
+                // $(".loading").text("");
             }
         }
-
         function message(pesan = "", judul = '', status = 'success'){
-            if(pesan != '')
-                toastr[status](judul, pesan)
+            if(pesan != ''){
+                Toast.fire({
+                    type: status,
+                    title: pesan
+                });
+            }
+                
         }
 
         function setPesan(obj){
@@ -177,34 +198,6 @@
 
         </script>
 
-<script type="text/javascript">
-
-
-// toastr["info"]("tes", "sdfsf")
-
-
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": true,
-  "rtl": false,
-  "positionClass": "toast-top-right",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": 300,
-  "hideDuration": 1000,
-  "timeOut": 5000,
-  "extendedTimeOut": 1000,
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-
-
-   
-</script>
         <?=@$script?>
 
 </body>

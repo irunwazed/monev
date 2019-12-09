@@ -45,6 +45,7 @@ class LoginController extends CI_Controller {
                 $status = true;
                 $data_session = array(
                     'id' => $dataOneUser[0]['id_tb_user'],
+                    'rpjmd' => 1,
                     'username'  => $dataOneUser[0]['tb_user_username'],
                     'akun' => $dataOneUser[0]['tb_user_akun'],
                     'level' => $dataOneUser[0]['tb_user_level'],
@@ -65,6 +66,6 @@ class LoginController extends CI_Controller {
 
     public function logout(){
         session_destroy();
-        redirect(base_url()."login");
+        redirect(base_url()."monev/login");
     }
 }

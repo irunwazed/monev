@@ -52,9 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['monev/import'] = 'monev/ImportController/viewImport';
 
-
 $route['monev/lra/import'] = 'monev/DataLraController/view';
 $route['monev/lra/do-import'] = 'monev/ImportController/importRek';
+$route['monev/lra/save/(:any)'] = 'monev/DataLraController/cetak/$1';
+
+$route['monev/rpjmd/import'] = 'monev/DataRpjmdController/view';
+$route['monev/rpjmd/do-import'] = 'monev/ImportController/importRek';
+
+$route['monev/logout'] = 'monev/LoginController/logout';
 
 $route['monev/login'] = 'monev/LoginController/login';
 $route['monev/cek-login'] = 'monev/LoginController/cekLogin';
@@ -67,6 +72,32 @@ $route['monev/lra/create'] = 'monev/LraController/action/create';
 $route['monev/lra/update'] = 'monev/LraController/action/update';
 $route['monev/lra/delete'] = 'monev/LraController/action/delete';
 
+$route['monev/evaluasi'] = 'monev/EvaluasiController/view';
+$route['monev/evaluasi/page-(:num)'] = 'monev/EvaluasiController/getData/$1';
+$route['monev/evaluasi/create'] = 'monev/EvaluasiController/action/create';
+$route['monev/evaluasi/update'] = 'monev/EvaluasiController/action/update';
+$route['monev/evaluasi/delete'] = 'monev/EvaluasiController/action/delete';
+
+$route['monev/user'] = 'monev/UserController/view';
+$route['monev/user/page-(:num)'] = 'monev/UserController/getData/$1';
+$route['monev/user/create'] = 'monev/UserController/action/create';
+$route['monev/user/update'] = 'monev/UserController/action/update';
+$route['monev/user/delete'] = 'monev/UserController/action/delete';
+
+$route['monev/misi'] = 'monev/MisiController/view';
+$route['monev/misi/page-(:num)'] = 'monev/MisiController/getData/$1';
+
+$route['monev/tujuan/page-(:num)'] = 'monev/TujuanController/getData/$2';
+$route['monev/tujuan/(:any)'] = 'monev/TujuanController/view/$1';
+
+$route['monev/sasaran/page-(:num)'] = 'monev/SasaranController/getData/$2';
+$route['monev/sasaran/(:any)'] = 'monev/SasaranController/view/$1';
+
+$route['monev/program/page-(:num)'] = 'monev/ProgramController/getData/$2';
+$route['monev/program/(:any)'] = 'monev/ProgramController/view/$1';
+
+$route['monev/kegiatan/page-(:num)'] = 'monev/KegiatanController/getData/$2';
+$route['monev/kegiatan/(:any)'] = 'monev/KegiatanController/view/$1';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

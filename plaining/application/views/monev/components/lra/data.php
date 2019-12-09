@@ -32,10 +32,33 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <form action="" id="form-opd">
-                                <select name="opd" id="">
-                                    <option value="">-= Pilih OPD =-</option>
-                                    <option value="1-1-1-1">Pendidikan</option>
-                                </select>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <select class="form-control" name="opd" required>
+                                                <option value="">-= Pilih OPD =-</option>
+                                                <?php foreach($dataOpd as $opd){ ?>
+                                                <option value="<?=$opd['tb_urusan_kode'].'-'.$opd['tb_bidang_kode'].'-'.$opd['tb_unit_kode'].'-'.$opd['tb_sub_unit_kode']?>"><?=$opd['tb_sub_unit_nama']?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <select class="form-control" name="tahun" required>
+                                                <option value="">-= Pilih Tahun =-</option>
+                                                <?php for($i = date('Y')+3; $i >= 2001; $i--){ ?>
+                                                <option value="<?=$i?>"><?=$i?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <!-- /.card-body -->
@@ -44,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" id="data-load" style="display: none">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -61,7 +84,7 @@
                                         <center>LAPORAN REALISASI ANGGARAN PENDAPATAN DAN BELANJA DAERAH</center>
                                     </h4>
                                     <h6>
-                                        <center>TAHUN ANGGARAN 2019</center>
+                                        <center>TAHUN ANGGARAN <span id="set-tahun"></span></center>
                                     </h6>
                                 </div>
                             </div>
@@ -70,25 +93,25 @@
                         <div class="card-body">
                             <table>
                                 <tr>
-                                    <td>Kode Rekening</td>
+                                    <td>Urusan Pemerintah</td>
                                     <td>:</td>
-                                    <td>Urusan Wajib Pelayanan Dasar Pendidikan</td>
+                                    <td id="opd-urusan"></td>
                                 </tr>
                                 <tr>
-                                    <td>Uraian</td>
+                                    <td>Unit Organisasi</td>
                                     <td>:</td>
-                                    <td>Dinas Pendidikan dan Kebudayaan</td>
+                                    <td id="opd-unit"></td>
                                 </tr>
                                 <tr>
-                                    <td>Jumlah</td>
+                                    <td>Sub Unit Organisasi</td>
                                     <td>:</td>
-                                    <td>Dinas Pendidikan dan Kebudayaan</td>
+                                    <td id="opd-sub-unit"></td>
                                 </tr>
                             </table>
                             <hr>
 
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-form"><i class="fa fas fa-plus"></i> Tambah Data LRA</button>
-                            <div style="float: right;">
+                            <div style="float: right;display:none;">
                                 <form action="" method="post">
                                     <div class="row">
                                         <div class="col-8">
@@ -131,33 +154,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <!-- <tr>
-                                        <td>1.</td>
-                                        <td>Update software</td>
-                                        <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-danger">55%</span></td>
-                                    </tr> -->
                                 </tbody>
                             </table>
                             </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
-                            <ul class="pagination pagination-sm m-0 float-right">
+                            <ul class="pagination pagination-sm m-0 float-right" style="display:none;">
                                 <li class="page-item"><a class="page-link" href="#table-user" onclick="dataPrevious()">&laquo;</a></li>
                                 <li class="page-item">
                                     <div class="page-link">
@@ -176,7 +179,7 @@
     </section>
 </div>
 <div class="modal fade" id="modal-form">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Tambah Data LRA</h4>
@@ -244,18 +247,6 @@
                             <div class="form-group">
                                 <p>Fisik</p>
                                 <input type="text" name="fisik" class="form-control" placeholder="Fisik">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <p>Bertambah/Berkurang</p>
-                                <input type="text" name="tambah_kurang" class="form-control" placeholder="Bertambah/Berkurang">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <p>%</p>
-                                <input type="text" name="persen" class="form-control" placeholder="%">
                             </div>
                         </div>
                         <div class="col-12">

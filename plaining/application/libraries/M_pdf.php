@@ -88,8 +88,8 @@ class M_pdf {
             . '</div>';
 
         // $pdf->SetHTMLHeader($htmlHeader);
-        $pdf->SetHTMLHeader($htmlHeader, 'O', true);
-        $pdf->SetHTMLHeader($htmlHeader2, 'E', false);
+        // $pdf->SetHTMLHeader($htmlHeader, 'O', true);
+        // $pdf->SetHTMLHeader($htmlHeader2, 'E', false);
         // $pdf->SetHTMLFooter($htmlFooter, 'O');
         // $pdf->SetHTMLFooter($htmlFooter, 'E');
 
@@ -101,8 +101,8 @@ class M_pdf {
             '', '', '', '',
             10, // margin_left
             10, // margin right
-            30, // margin top
-            20, // margin bottom
+            10, // margin top
+            10, // margin bottom
             0, // margin header
             0
         );

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2019 at 05:48 PM
+-- Generation Time: Dec 09, 2019 at 08:47 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -624,13 +624,8 @@ INSERT INTO `tb_monev_lra` (`id_tb_monev_lra`, `tb_urusan_kode`, `tb_bidang_kode
 (249, 1, 1, 1, 1, 2019, 5, 2, 2, 11, 4, 15, 72, 'Belanja makanan dan minuman pelatihan', 9200000, 0, '', '', '', '', NULL),
 (250, 1, 1, 1, 1, 2019, 5, 2, 2, 29, 0, 15, 72, 'Belanja Transportasi dan Akomodasi', 32035000, 0, '', '', '', '', NULL),
 (251, 1, 1, 1, 1, 2019, 5, 2, 2, 29, 1, 15, 72, 'Belanja Transportasi dan Akomodasi', 32035000, 0, '', '', '', '', NULL),
-(252, 1, 1, 1, 1, 2019, 5, 2, 0, 0, 0, 15, 0, 'Program Pengembangan Nilai Budaya', 718112750, 99043400, '', '', '', '', NULL),
-(253, 1, 1, 1, 1, 2019, 5, 2, 0, 0, 0, 15, 1, 'Pelestarian dan aktualisasi adat budaya daera', 50000000, 14991000, '', '', '', '', NULL),
-(254, 1, 1, 1, 1, 2019, 5, 2, 2, 0, 0, 15, 1, 'Belanja Barang dan Jasa', 50000000, 14991000, '', '', '', '', NULL),
 (255, 1, 1, 1, 1, 2019, 5, 2, 2, 3, 0, 15, 1, 'Belanja Jasa Kantor', 50000000, 14991000, '', '', '', '', NULL),
 (256, 1, 1, 1, 1, 2019, 5, 2, 2, 3, 26, 15, 1, 'Belanja Jasa Pembuatan Film', 50000000, 14991000, '', '', '', '', NULL),
-(257, 1, 1, 1, 1, 2019, 5, 2, 3, 0, 0, 15, 1, 'Belanja Modal', 0, 0, '', '', '', '', NULL),
-(258, 1, 1, 1, 1, 2019, 5, 2, 3, 49, 0, 15, 1, 'Belanja Modal Gedung dan Bangunan - Pengadaan', 0, 0, '', '', '', '', NULL),
 (259, 1, 1, 1, 1, 2019, 5, 2, 3, 49, 20, 15, 1, 'Belanja Modal Gedung dan Bangunan - Pengadaan', 0, 0, '', '', '', '', NULL),
 (260, 1, 1, 1, 1, 2019, 5, 2, 0, 0, 0, 15, 4, 'Pemantauan dan evaluasi pelaksanaan program p', 51450000, 0, '', '', '', '', NULL),
 (261, 1, 1, 1, 1, 2019, 5, 2, 2, 0, 0, 15, 4, 'Belanja Barang dan Jasa', 51450000, 0, '', '', '', '', NULL),
@@ -785,13 +780,13 @@ INSERT INTO `tb_monev_lra` (`id_tb_monev_lra`, `tb_urusan_kode`, `tb_bidang_kode
 (410, 1, 1, 1, 1, 2019, 5, 2, 1, 2, 1, 17, 11, 'Honorarium Tenaga Ahli/Instruktur/Narasumber', 93450000, 55050000, '', '', '', '', NULL),
 (411, 1, 1, 1, 1, 2019, 5, 2, 2, 0, 0, 17, 11, 'Belanja Barang dan Jasa', 66165000, 43114750, '', '', '', '', NULL),
 (412, 1, 1, 1, 1, 2019, 5, 2, 2, 1, 0, 17, 11, 'Belanja Bahan Pakai Habis', 4260000, 2150000, '', '', '', '', NULL),
-(413, 1, 1, 1, 1, 2019, 5, 2, 2, 1, 1, 17, 11, 'Belanja Alat Tulis Kantor', 360000, 0, '', '', '', '', NULL);
-INSERT INTO `tb_monev_lra` (`id_tb_monev_lra`, `tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_sub_unit_kode`, `tb_monev_lra_tahun`, `tb_rekening1_kode`, `tb_rekening2_kode`, `tb_rekening3_kode`, `tb_rekening4_kode`, `tb_rekening5_kode`, `program_kode`, `kegiatan_kode`, `tb_monev_lra_ket`, `tb_monev_lra_anggaran`, `tb_monev_lra_realisasi`, `tb_monev_lra_fisik`, `tb_monev_lra_pelaksana`, `tb_monev_lra_sumber_dana`, `tb_monev_lra_lokasi`, `tb_monev_lra_jenis`) VALUES
+(413, 1, 1, 1, 1, 2019, 5, 2, 2, 1, 1, 17, 11, 'Belanja Alat Tulis Kantor', 360000, 0, '', '', '', '', NULL),
 (414, 1, 1, 1, 1, 2019, 5, 2, 2, 1, 12, 17, 11, 'Belanja Dokumentasi', 3900000, 2150000, '', '', '', '', NULL),
 (415, 1, 1, 1, 1, 2019, 5, 2, 2, 6, 0, 17, 11, 'Belanja Cetak dan Penggandaan', 3240000, 1299750, '', '', '', '', NULL),
 (416, 1, 1, 1, 1, 2019, 5, 2, 2, 6, 2, 17, 11, 'Belanja Penggandaan', 3240000, 1299750, '', '', '', '', NULL),
 (417, 1, 1, 1, 1, 2019, 5, 2, 2, 8, 0, 17, 11, 'Belanja Sewa Sarana Mobilitas', 7500000, 4000000, '', '', '', '', NULL),
-(418, 1, 1, 1, 1, 2019, 5, 2, 2, 8, 1, 17, 11, 'Belanja Sewa Sarana Mobilitas Darat', 7500000, 4000000, '', '', '', '', NULL),
+(418, 1, 1, 1, 1, 2019, 5, 2, 2, 8, 1, 17, 11, 'Belanja Sewa Sarana Mobilitas Darat', 7500000, 4000000, '', '', '', '', NULL);
+INSERT INTO `tb_monev_lra` (`id_tb_monev_lra`, `tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_sub_unit_kode`, `tb_monev_lra_tahun`, `tb_rekening1_kode`, `tb_rekening2_kode`, `tb_rekening3_kode`, `tb_rekening4_kode`, `tb_rekening5_kode`, `program_kode`, `kegiatan_kode`, `tb_monev_lra_ket`, `tb_monev_lra_anggaran`, `tb_monev_lra_realisasi`, `tb_monev_lra_fisik`, `tb_monev_lra_pelaksana`, `tb_monev_lra_sumber_dana`, `tb_monev_lra_lokasi`, `tb_monev_lra_jenis`) VALUES
 (419, 1, 1, 1, 1, 2019, 5, 2, 2, 10, 0, 17, 11, 'Belanja Sewa Perlengkapan dan Peralatan Kanto', 28125000, 19875000, '', '', '', '', NULL),
 (420, 1, 1, 1, 1, 2019, 5, 2, 2, 10, 8, 17, 11, 'Belanja Sewa Dekorasi', 28125000, 19875000, '', '', '', '', NULL),
 (421, 1, 1, 1, 1, 2019, 5, 2, 2, 11, 0, 17, 11, 'Belanja Makanan dan  Minuman', 23040000, 15790000, '', '', '', '', NULL),
@@ -1128,6 +1123,7 @@ CREATE TABLE `tb_monev_triwulan` (
   `tb_rpjmd_sasaran_kode` int(11) DEFAULT NULL,
   `tb_rpjmd_program_kode` int(11) DEFAULT NULL,
   `tb_rpjmd_kegiatan_kode` int(11) DEFAULT NULL,
+  `tb_monev_triwulan_tahun` int(11) DEFAULT NULL,
   `tb_monev_triwulan_indikator` text,
   `tb_monev_triwulan_target1` double DEFAULT NULL,
   `tb_monev_triwulan_rupiah1` double DEFAULT NULL,
@@ -1137,8 +1133,6 @@ CREATE TABLE `tb_monev_triwulan` (
   `tb_monev_triwulan_rupiah3` double DEFAULT NULL,
   `tb_monev_triwulan_target4` double DEFAULT NULL,
   `tb_monev_triwulan_rupiah4` double DEFAULT NULL,
-  `tb_monev_triwulan_target5` double DEFAULT NULL,
-  `tb_monev_triwulan_rupiah5` double DEFAULT NULL,
   `id_tb_satuan` int(11) DEFAULT NULL,
   `tb_monev_triwulan_satuan` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1407,8 +1401,8 @@ CREATE TABLE `tb_renstra_kegiatan` (
   `tb_rpjmd_tujuan_kode` int(11) NOT NULL,
   `tb_rpjmd_sasaran_kode` int(11) NOT NULL,
   `tb_rpjmd_program_kode` int(11) NOT NULL,
-  `tb_bidang_kode` int(11) NOT NULL,
   `tb_renstra_kegiatan_kode` int(11) NOT NULL,
+  `tb_bidang_kode` int(11) NOT NULL,
   `tb_urusan_kode` int(11) NOT NULL,
   `tb_unit_kode` int(11) NOT NULL,
   `tb_sub_unit_kode` int(11) NOT NULL,
@@ -1416,14 +1410,53 @@ CREATE TABLE `tb_renstra_kegiatan` (
   `tb_renstra_kegiatan_indikator` text,
   `tb_renstra_kegiatan_awal` double DEFAULT NULL,
   `tb_renstra_kegiatan_target1` double DEFAULT NULL,
+  `tb_renstra_kegiatan_anggaran1` double DEFAULT NULL,
   `tb_renstra_kegiatan_target2` double DEFAULT NULL,
+  `tb_renstra_kegiatan_anggaran2` double DEFAULT NULL,
   `tb_renstra_kegiatan_target3` double DEFAULT NULL,
+  `tb_renstra_kegiatan_anggaran3` double DEFAULT NULL,
   `tb_renstra_kegiatan_target4` double DEFAULT NULL,
+  `tb_renstra_kegiatan_anggaran4` double DEFAULT NULL,
   `tb_renstra_kegiatan_target5` double DEFAULT NULL,
+  `tb_renstra_kegiatan_anggaran5` double DEFAULT NULL,
   `tb_renstra_kegiatan_lokasi` text,
   `tb_renstra_kegiatan_verifikasi` text,
   `id_tb_satuan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_renstra_kegiatan`
+--
+
+INSERT INTO `tb_renstra_kegiatan` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_program_kode`, `tb_renstra_kegiatan_kode`, `tb_bidang_kode`, `tb_urusan_kode`, `tb_unit_kode`, `tb_sub_unit_kode`, `tb_renstra_kegiatan_nama`, `tb_renstra_kegiatan_indikator`, `tb_renstra_kegiatan_awal`, `tb_renstra_kegiatan_target1`, `tb_renstra_kegiatan_anggaran1`, `tb_renstra_kegiatan_target2`, `tb_renstra_kegiatan_anggaran2`, `tb_renstra_kegiatan_target3`, `tb_renstra_kegiatan_anggaran3`, `tb_renstra_kegiatan_target4`, `tb_renstra_kegiatan_anggaran4`, `tb_renstra_kegiatan_target5`, `tb_renstra_kegiatan_anggaran5`, `tb_renstra_kegiatan_lokasi`, `tb_renstra_kegiatan_verifikasi`, `id_tb_satuan`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'kegiatan 1.1.1.1.1', 'kegiatan 1.1.1.1.1', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 'kegiatan 1.1.1.1.2', 'kegiatan 1.1.1.1.2', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 'kegiatan 1.1.1.1.3', 'kegiatan 1.1.1.1.3', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 'kegiatan 1.1.1.1.4', 'kegiatan 1.1.1.1.4', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 'kegiatan 1.1.1.1.5', 'kegiatan 1.1.1.1.5', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 'kegiatan 1.1.1.2.1', 'kegiatan 1.1.1.2.1', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 'kegiatan 1.1.1.2.2', 'kegiatan 1.1.1.2.2', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 1, 1, 2, 3, 1, 1, 1, 1, 'kegiatan 1.1.1.2.3', 'kegiatan 1.1.1.2.3', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 'kegiatan 1.1.1.2.4', 'kegiatan 1.1.1.2.4', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 'kegiatan 1.1.2.1.1', 'kegiatan 1.1.2.1.1', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 'kegiatan 1.1.2.1.2', 'kegiatan 1.1.2.1.2', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 2, 1, 3, 1, 1, 1, 1, 'kegiatan 1.1.2.1.3', 'kegiatan 1.1.2.1.3', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 2, 1, 4, 1, 1, 1, 1, 'kegiatan 1.1.2.1.4', 'kegiatan 1.1.2.1.4', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 1, 2, 1, 5, 1, 1, 1, 1, 'kegiatan 1.1.2.1.5', 'kegiatan 1.1.2.1.5', 60, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, 100, 200000000, '', NULL, 1),
+(1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 'kegiatan 1.2.1.1.1', 'kegiatan 1.2.1.1.1', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 'kegiatan 1.2.1.1.2', 'kegiatan 1.2.1.1.2', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 2, 1, 1, 3, 1, 1, 1, 1, 'kegiatan 1.2.1.1.3', 'kegiatan 1.2.1.1.3', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 1, 2, 1, 1, 4, 1, 1, 1, 1, 'kegiatan 1.2.1.1.4', 'kegiatan 1.2.1.1.4', 60, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, 100, 250000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 'kegiatan 2.1.1.1.1', 'kegiatan 2.1.1.1.1', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 'kegiatan 2.1.1.1.2', 'kegiatan 2.1.1.1.2', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 'kegiatan 2.1.1.1.3', 'kegiatan 2.1.1.1.3', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 4, 1, 1, 1, 1, 'kegiatan 2.1.1.1.4', 'kegiatan 2.1.1.1.4', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 5, 1, 1, 1, 1, 'kegiatan 2.1.1.1.5', 'kegiatan 2.1.1.1.5', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 6, 1, 1, 1, 1, 'kegiatan 2.1.1.1.6', 'kegiatan 2.1.1.1.6', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 7, 1, 1, 1, 1, 'kegiatan 2.1.1.1.7', 'kegiatan 2.1.1.1.7', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 8, 1, 1, 1, 1, 'kegiatan 2.1.1.1.8', 'kegiatan 2.1.1.1.8', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 9, 1, 1, 1, 1, 'kegiatan 2.1.1.1.9', 'kegiatan 2.1.1.1.9', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1),
+(1, 2, 1, 1, 1, 10, 1, 1, 1, 1, 'kegiatan 2.1.1.1.10', 'kegiatan 2.1.1.1.10', 60, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, 100, 100000000, '', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1504,13 +1537,8 @@ CREATE TABLE `tb_rpjmd_misi` (
 --
 
 INSERT INTO `tb_rpjmd_misi` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_misi_nama`) VALUES
-(1, 1, 'Menciptakan pemerintahan yang baik dan bersih melalui peningkatan kapabilitas profesional dan kesejahteraan aparatur pemerintah berdasarkan Nilai-nilai kebenaran dan keadilan.'),
-(1, 2, 'Meningkatkan pengelolaan SDA guna meningkatkan PAD dengan melibatkan UMKM lokal dan Koperasi agar dapat meningkatkan taraf ekonomi masyarakat dan menyerap TK lokal dengan tetap menjaga hak-hak pekerja, iklim investasi yang baik dan kelestarian alam.'),
-(1, 3, 'Meningkatkan pelayanan pendidikan yang berkualitas melalui Pembiayaan Pendidikan Gratis, peningkatan kuantitas dan kualitas tenaga pengajar, Pemberian beasiswa dan penambahan sarana pendidikan guna menciptakan SDM yang cerdas, kreatif, inovatif dan bertaqwa.'),
-(1, 4, 'Meningkatkan pelayanan kesehatan melalui Pembiayaan kesehatan Gratis, peningkatan kuantitas dan kualitas fasilitas kesehatan, tenaga Kesehatan dan ketersediaan obat yang berkualitas, serta mendorong kebersihan, Kesehatan dan keindahan lingkungan agar tercipta suasana sehat dan nyaman.'),
-(1, 5, 'Meningkatkan produksi pangan melalui peningkatan dan pengembangan bidang infrastruktur pertanian, peternakan, perikanan, kehutanan dan kelautan yang didukung oleh kemudahan modal usaha dan TTG agar tercipta kepastian harga dan pasar.'),
-(1, 6, 'Meningkatkan kualitas hidup masyarakat melalui peningkatan fasilitas air bersih, Listrik, fasilitas olahraga, perumahan, obyek wisata, serta seni dan budaya sehingga tercipta kehidupan masyarakat yang harmonis dan bahagia.'),
-(1, 7, 'Mewujudkan kehidupan masyarakat yang beriman dan bertaqwa melalui peningkatan pembinaan agama, sarana dan prasana tempat ibadah sehingga tercipta kerukunan hidup antar umat beragama.');
+(1, 1, 'misi 1'),
+(1, 2, 'misi 2');
 
 -- --------------------------------------------------------
 
@@ -1529,6 +1557,17 @@ CREATE TABLE `tb_rpjmd_opd` (
   `tb_unit_kode` int(11) NOT NULL,
   `tb_sub_unit_kode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_rpjmd_opd`
+--
+
+INSERT INTO `tb_rpjmd_opd` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_program_kode`, `tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_sub_unit_kode`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1),
+(1, 1, 1, 1, 2, 1, 1, 1, 1),
+(1, 1, 1, 2, 1, 1, 1, 1, 1),
+(1, 1, 2, 1, 1, 1, 1, 1, 1),
+(1, 2, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1551,6 +1590,17 @@ CREATE TABLE `tb_rpjmd_program` (
   `tb_rpjmd_program_pagu_th5` double DEFAULT NULL,
   `id_tb_satuan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_rpjmd_program`
+--
+
+INSERT INTO `tb_rpjmd_program` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_program_kode`, `tb_rpjmd_program_nama`, `tb_rpjmd_program_pagu_ket`, `tb_rpjmd_program_pagu_th1`, `tb_rpjmd_program_pagu_th2`, `tb_rpjmd_program_pagu_th3`, `tb_rpjmd_program_pagu_th4`, `tb_rpjmd_program_pagu_th5`, `id_tb_satuan`) VALUES
+(1, 1, 1, 1, 1, 'program 1.1.1.1', NULL, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1),
+(1, 1, 1, 1, 2, 'program 1.1.1.2', NULL, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1),
+(1, 1, 1, 2, 1, 'program 1.1.2.1', NULL, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1),
+(1, 1, 2, 1, 1, 'program 1.2.1.1', NULL, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1),
+(1, 2, 1, 1, 1, 'program 2.1.1.1', NULL, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1);
 
 -- --------------------------------------------------------
 
@@ -1578,6 +1628,17 @@ CREATE TABLE `tb_rpjmd_program_indikator` (
   `id_tb_satuan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tb_rpjmd_program_indikator`
+--
+
+INSERT INTO `tb_rpjmd_program_indikator` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_program_kode`, `tb_rpjmd_program_indikator_kode`, `tb_rpjmd_program_indikator_ukur`, `tb_rpjmd_program_indikator_jenis`, `tb_rpjmd_program_indikator_indikator`, `tb_rpjmd_program_indikator_target_th1`, `tb_rpjmd_program_indikator_target_th2`, `tb_rpjmd_program_indikator_target_th3`, `tb_rpjmd_program_indikator_target_th4`, `tb_rpjmd_program_indikator_target_th5`, `tb_rpjmd_program_indikator_awal`, `tb_rpjmd_program_indikator_ket`, `id_tb_satuan`) VALUES
+(1, 1, 1, 1, 1, 1, NULL, NULL, NULL, 100, 100, 100, 100, 100, NULL, 'program 1.1.1.1', 1),
+(1, 1, 1, 1, 2, 1, NULL, NULL, NULL, 100, 100, 100, 100, 100, NULL, 'program 1.1.1.2', 1),
+(1, 1, 1, 2, 1, 1, NULL, NULL, NULL, 100, 100, 100, 100, 100, NULL, 'program 1.1.2.1', 1),
+(1, 1, 2, 1, 1, 1, NULL, NULL, NULL, 100, 100, 100, 100, 100, NULL, 'program 1.2.1.1', 1),
+(1, 2, 1, 1, 1, 1, NULL, NULL, NULL, 100, 100, 100, 100, 100, NULL, 'program 2.1.1.1', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1589,15 +1650,19 @@ CREATE TABLE `tb_rpjmd_sasaran` (
   `tb_rpjmd_misi_kode` int(11) NOT NULL,
   `tb_rpjmd_tujuan_kode` int(11) NOT NULL,
   `tb_rpjmd_sasaran_kode` int(11) NOT NULL,
-  `tb_rpjmd_sasaran_nama` text
+  `tb_rpjmd_sasaran_nama` text,
+  `tb_rpjmd_sasaran_indikator` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_rpjmd_sasaran`
 --
 
-INSERT INTO `tb_rpjmd_sasaran` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_sasaran_nama`) VALUES
-(1, 1, 1, 1, 'sasaran1');
+INSERT INTO `tb_rpjmd_sasaran` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_sasaran_nama`, `tb_rpjmd_sasaran_indikator`) VALUES
+(1, 1, 1, 1, 'sasarana 1.1.1', 'indikator 1.1.1'),
+(1, 1, 1, 2, 'sasarana 1.1.2', 'indikator 1.1.2'),
+(1, 1, 2, 1, 'sasarana 1.2.1', 'indikator 1.2.1'),
+(1, 2, 1, 1, 'sasarana 2.1.1', 'indikator 2.1.1');
 
 -- --------------------------------------------------------
 
@@ -1632,7 +1697,9 @@ CREATE TABLE `tb_rpjmd_tujuan` (
 --
 
 INSERT INTO `tb_rpjmd_tujuan` (`id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_tujuan_nama`) VALUES
-(1, 1, 1, 'tujuan1');
+(1, 1, 1, 'tujuan 1.1'),
+(1, 1, 2, 'tujuan 1.2'),
+(1, 2, 1, 'tujuan 2.1');
 
 -- --------------------------------------------------------
 
@@ -1666,6 +1733,13 @@ CREATE TABLE `tb_satuan` (
   `tb_satuan_nama` varchar(45) DEFAULT NULL,
   `tb_satuan_ket` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_satuan`
+--
+
+INSERT INTO `tb_satuan` (`id_tb_satuan`, `tb_satuan_nama`, `tb_satuan_ket`) VALUES
+(1, '%', NULL);
 
 -- --------------------------------------------------------
 
@@ -1755,7 +1829,8 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_tb_user`, `tb_user_username`, `tb_user_password`, `tb_user_hp`, `tb_user_akun`, `tb_user_level`, `tb_user_date`) VALUES
 (1, 'admin', '$2y$13$ZtzUVhoI/bLqKmpetdHWW.ozUXArLlGrHbX7uCa68du.WSGZX8SQS', '085756733113', 3, 1, NULL),
-(2, 'userlevel', '$2y$13$ZtzUVhoI/bLqKmpetdHWW.ozUXArLlGrHbX7uCa68du.WSGZX8SQS', NULL, 2, 1, NULL);
+(2, 'userlevel', '$2y$13$ZtzUVhoI/bLqKmpetdHWW.ozUXArLlGrHbX7uCa68du.WSGZX8SQS', NULL, 2, 1, NULL),
+(3, 'monev', '$2y$10$4R.BSOgVydMc.JJLG.0KKuKD9uuBFQt75X/DYOGGD24OAhAgRbMwq', '123456', 7, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -1965,6 +2040,7 @@ ALTER TABLE `tb_misi_sdgs`
 --
 ALTER TABLE `tb_monev_lra`
   ADD PRIMARY KEY (`id_tb_monev_lra`,`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`),
+  ADD UNIQUE KEY `lra_kode` (`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`,`tb_monev_lra_tahun`,`tb_rekening1_kode`,`tb_rekening2_kode`,`program_kode`,`kegiatan_kode`,`tb_rekening3_kode`,`tb_rekening4_kode`,`tb_rekening5_kode`),
   ADD KEY `fk_tb_monev_lra_tb_sub_unit1_idx` (`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`);
 
 --
@@ -1972,6 +2048,7 @@ ALTER TABLE `tb_monev_lra`
 --
 ALTER TABLE `tb_monev_triwulan`
   ADD PRIMARY KEY (`id_tb_monev_triwulan`,`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`),
+  ADD UNIQUE KEY `triwulan_kode` (`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`,`id_tb_rpjmd`,`tb_rpjmd_misi_kode`,`tb_rpjmd_tujuan_kode`,`tb_rpjmd_sasaran_kode`,`tb_rpjmd_program_kode`,`tb_rpjmd_kegiatan_kode`,`tb_monev_triwulan_tahun`),
   ADD KEY `fk_tb_monev_triwulan_tb_sub_unit1_idx` (`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`);
 
 --
@@ -2070,7 +2147,7 @@ ALTER TABLE `tb_rekening5`
 -- Indexes for table `tb_renstra_kegiatan`
 --
 ALTER TABLE `tb_renstra_kegiatan`
-  ADD PRIMARY KEY (`id_tb_rpjmd`,`tb_rpjmd_misi_kode`,`tb_rpjmd_tujuan_kode`,`tb_rpjmd_sasaran_kode`,`tb_rpjmd_program_kode`,`tb_bidang_kode`,`tb_renstra_kegiatan_kode`,`tb_urusan_kode`,`tb_unit_kode`,`tb_sub_unit_kode`,`id_tb_satuan`),
+  ADD PRIMARY KEY (`id_tb_rpjmd`,`tb_rpjmd_misi_kode`,`tb_rpjmd_tujuan_kode`,`tb_rpjmd_sasaran_kode`,`tb_rpjmd_program_kode`,`tb_renstra_kegiatan_kode`,`tb_bidang_kode`,`tb_urusan_kode`,`tb_unit_kode`,`tb_sub_unit_kode`,`id_tb_satuan`),
   ADD KEY `fk_tb_renstra_kegiatan_tb_rpjmd_opd1_idx` (`id_tb_rpjmd`,`tb_rpjmd_misi_kode`,`tb_rpjmd_tujuan_kode`,`tb_rpjmd_sasaran_kode`,`tb_rpjmd_program_kode`,`tb_urusan_kode`,`tb_bidang_kode`,`tb_unit_kode`,`tb_sub_unit_kode`),
   ADD KEY `fk_tb_renstra_kegiatan_tb_satuan1_idx` (`id_tb_satuan`);
 
@@ -2310,12 +2387,12 @@ ALTER TABLE `tb_rpjmd_visi_penjelasan`
 -- AUTO_INCREMENT for table `tb_satuan`
 --
 ALTER TABLE `tb_satuan`
-  MODIFY `id_tb_satuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tb_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_tb_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tb_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_user_bappeda`
 --

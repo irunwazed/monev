@@ -1,8 +1,8 @@
 <?php
     $style = 'style="border: 1px solid #aaaaaa; padding: 10px;"';
-    $styleLeft = 'style="border: 1px solid; padding: 10px; text-align: left;"';
-    $styleRight = 'style="border: 1px solid; padding: 10px; text-align: right;"';
-    $styleEdit = 'border: 1px solid; padding: 10px; ';
+    $styleLeft = 'style="border: 1px solid #aaaaaa; padding: 10px; text-align: left;"';
+    $styleRight = 'style="border: 1px solid #aaaaaa; padding: 10px; text-align: right;"';
+    $styleEdit = 'border: 1px solid #aaaaaa; padding: 10px; ';
    
     $name = "INDIKATOR CAPAIAN TAHUN ";
     // echo "<pre>";
@@ -88,38 +88,24 @@
                     <?php } ?>
                     </tr>
                 </thead>
-                <thead>
+                <tbody>
+                    <?php for($i = 0; $i < count($data); $i++){ ?>
                     <tr>
-                        <td></td>
+                        <td <?=$style?>><?=$data[$i]['tb_rekening1_kode'].".".$data[$i]['tb_rekening2_kode'].".".$data[$i]['program_kode'].".".$data[$i]['kegiatan_kode'].".".$data[$i]['tb_rekening3_kode'].".".$data[$i]['tb_rekening4_kode'].".".$data[$i]['tb_rekening5_kode']?></td>
+                        <td <?=$style?>><?=$data[$i]['tb_monev_lra_ket']?></td>
+                        <td <?=$styleRight?>><?=number_format($data[$i]['tb_monev_lra_anggaran'],2,',','.')?></td>
+                        <td <?=$styleRight?>><?=number_format($data[$i]['tb_monev_lra_realisasi'],2,',','.')?></td>
+                        <td <?=$style?>><?=$data[$i]['tb_monev_lra_fisik']?></td>
+                        <td <?=$styleRight?>><?=($data[$i]['tb_monev_lra_realisasi']-$data[$i]['tb_monev_lra_anggaran'])<0?"(".number_format(ABS(($data[$i]['tb_monev_lra_realisasi']-$data[$i]['tb_monev_lra_anggaran'])),2,',','.').")":number_format($data[$i]['tb_monev_lra_realisasi']-$data[$i]['tb_monev_lra_anggaran'],2,',','.')?></td>
+                        <td <?=$styleRight?>><?=$data[$i]['tb_monev_lra_anggaran']!=0?round((100*$data[$i]['tb_monev_lra_realisasi']/$data[$i]['tb_monev_lra_anggaran']), 2):0?></td>
+                        <td <?=$style?>><?=$data[$i]['tb_monev_lra_pelaksana']?></td>
+                        <td <?=$style?>><?=$data[$i]['tb_monev_lra_sumber_dana']?></td>
+                        <td <?=$style?>><?=$data[$i]['tb_monev_lra_lokasi']?></td>
                     </tr>
-                </thead>
+                    <?php } ?>
+                </tbody>
 
             </table>
-        </div>
-        <div style="height: 220px; width: 100%;">
-           <div style="float: right; width: 280px;">
-           <br>
-           <br>
-            <table>
-                <tr>
-                    <td colspan="2">Morowali, ..........................</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: left;"><?=ucwords(@$dataOpd->tb_sub_unit_nama)?></td>
-                    <!-- <th style="text-align: left;"></th> -->
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: left; padding-bottom: 100px;">Kepala,</td>
-                    <!-- <th style="text-align: left; padding-bottom: 100px;"></th> -->
-                </tr>
-                <tr>
-                    <td colspan="2"><hr></td>
-                </tr>
-            </table>
-            <!-- <h4 style="text-align: center; margin: 0px; padding: 0px;">An. BUPATI KOLAKA UTARA</h4>
-            <h4 style="text-align: center; margin: 0px; padding: 0px;"> SEKRETARIS DAERAH</h4> -->
-            <!-- <p style="text-align: right">Keterangan...</p> -->
-            </div> 
         </div>
     </body>
 </html>

@@ -13,8 +13,8 @@ class SasaranController extends CI_Controller {
     public function view($kode){
         $data = array();
         $data['kode'] = $kode;
-        // $this->load->model('monev/DataModel');
-        // $data['dataOpd'] = $this->DataModel->getOpdJenis();
+        $this->load->model('monev/DataModel');
+        $data['dataRpjmd'] = $this->DataModel->getTujuan($kode);
         // $data['dataOpdPilih'] = $this->DataModel->getOpdWithJenis($this->jenis);
         $foot['script'] = $this->load->view('monev/components/sasaran/script', $data, true);
 		

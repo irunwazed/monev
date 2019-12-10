@@ -1,6 +1,6 @@
 <?php
 
-class KegiatanModel extends CI_Model
+class EvaluasiModel2 extends CI_Model
 {
     private $jumlah, $table;
     public function __construct()
@@ -11,18 +11,23 @@ class KegiatanModel extends CI_Model
     }
 
     public function setQuery($post){
-        $kode = explode("-", $post['kode']);
-        $this->db->where("tb_rpjmd_misi_kode", $kode[0]);
-        $this->db->where("tb_rpjmd_tujuan_kode", $kode[1]);
-        $this->db->where("tb_rpjmd_sasaran_kode", $kode[2]);
-        $this->db->where("tb_rpjmd_program_kode", $kode[3]);
-
-
-        $this->db->join('tb_sub_unit', 'tb_sub_unit.tb_urusan_kode = tb_renstra_kegiatan.tb_urusan_kode
-                                    AND tb_sub_unit.tb_bidang_kode = tb_renstra_kegiatan.tb_bidang_kode
-                                    AND tb_sub_unit.tb_unit_kode = tb_renstra_kegiatan.tb_unit_kode
-                                    AND tb_sub_unit.tb_sub_unit_kode = tb_renstra_kegiatan.tb_sub_unit_kode');
-
+        $this->db->select("tb_renstra_kegiatan.*, tb_monev_triwulan.tb_monev_triwulan_tahun, tb_monev_triwulan.tb_monev_triwulan_indikator
+                                            , tb_monev_triwulan.tb_monev_triwulan_target1, tb_monev_triwulan.tb_monev_triwulan_rupiah1
+                                            , tb_monev_triwulan.tb_monev_triwulan_target2, tb_monev_triwulan.tb_monev_triwulan_rupiah2
+                                            , tb_monev_triwulan.tb_monev_triwulan_target3, tb_monev_triwulan.tb_monev_triwulan_rupiah3
+                                            , tb_monev_triwulan.tb_monev_triwulan_target4, tb_monev_triwulan.tb_monev_triwulan_rupiah4");
+        $this->db->join('tb_monev_triwulan', 'tb_renstra_kegiatan.id_tb_rpjmd = tb_monev_triwulan.id_tb_rpjmd
+                                            AND tb_renstra_kegiatan.tb_rpjmd_misi_kode = tb_monev_triwulan.tb_rpjmd_misi_kode
+                                            AND tb_renstra_kegiatan.tb_rpjmd_tujuan_kode = tb_monev_triwulan.tb_rpjmd_tujuan_kode
+                                            AND tb_renstra_kegiatan.tb_rpjmd_sasaran_kode = tb_monev_triwulan.tb_rpjmd_sasaran_kode
+                                            AND tb_renstra_kegiatan.tb_rpjmd_program_kode = tb_monev_triwulan.tb_rpjmd_program_kode
+                                            AND tb_renstra_kegiatan.tb_renstra_kegiatan_kode = tb_monev_triwulan.tb_rpjmd_kegiatan_kode', 'left');
+        // $this->db->join('tb_rpjmd_program_indikator', 'tb_rpjmd_program_indikator.id_tb_rpjmd = tb_renstra_kegiatan.id_tb_rpjmd
+        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_misi_kode = tb_renstra_kegiatan.tb_rpjmd_misi_kode
+        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_tujuan_kode = tb_renstra_kegiatan.tb_rpjmd_tujuan_kode
+        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_sasaran_kode = tb_renstra_kegiatan.tb_rpjmd_sasaran_kode
+        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_program_kode = tb_renstra_kegiatan.tb_rpjmd_program_kode');
+        // $this->db->where('tb_user_akun', 7);
     }
 
     public function getCount($post = array()){

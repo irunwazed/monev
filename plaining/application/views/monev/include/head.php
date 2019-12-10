@@ -236,51 +236,62 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="<?=base_url("monev/lra")?>" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon far fas fa-th"></i>
                 <p>
                   LRA
-                  <span></span>
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/lra")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/lra/import")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Import dan Cetak</p>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a href="<?=base_url("monev/lra/import")?>" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  Import LRA
-                  <span></span>
+                  MONEV
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?=base_url("monev/evaluasi")?>" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Evaluasi
-                  <span></span>
-                </p>
-              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/rpjmd/import")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Import</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/misi")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Penyusunan</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a href="<?=base_url("monev/user")?>" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-edit"></i>
                 <p>
                   User
                   <span></span>
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="<?=base_url("monev/misi")?>" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  RPJMD
-                  <span></span>
-                </p>
-              </a>
-            </li>
+            
             <!-- <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>

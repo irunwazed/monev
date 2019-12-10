@@ -72,11 +72,11 @@ $route['monev/lra/create'] = 'monev/LraController/action/create';
 $route['monev/lra/update'] = 'monev/LraController/action/update';
 $route['monev/lra/delete'] = 'monev/LraController/action/delete';
 
-$route['monev/evaluasi'] = 'monev/EvaluasiController/view';
-$route['monev/evaluasi/page-(:num)'] = 'monev/EvaluasiController/getData/$1';
-$route['monev/evaluasi/create'] = 'monev/EvaluasiController/action/create';
-$route['monev/evaluasi/update'] = 'monev/EvaluasiController/action/update';
-$route['monev/evaluasi/delete'] = 'monev/EvaluasiController/action/delete';
+$route['monev/evaluasi'] = 'monev/Evaluasi2Controller/view';
+$route['monev/evaluasi2/page-(:num)'] = 'monev/Evaluasi2Controller/getData/$1';
+$route['monev/evaluasi2/create'] = 'monev/Evaluasi2Controller/action/create';
+$route['monev/evaluasi2/update'] = 'monev/Evaluasi2Controller/action/update';
+$route['monev/evaluasi2/delete'] = 'monev/Evaluasi2Controller/action/delete';
 
 $route['monev/user'] = 'monev/UserController/view';
 $route['monev/user/page-(:num)'] = 'monev/UserController/getData/$1';
@@ -98,6 +98,13 @@ $route['monev/program/(:any)'] = 'monev/ProgramController/view/$1';
 
 $route['monev/kegiatan/page-(:num)'] = 'monev/KegiatanController/getData/$2';
 $route['monev/kegiatan/(:any)'] = 'monev/KegiatanController/view/$1';
+
+
+$route['monev/evaluasi/page-(:num)'] = 'monev/EvaluasiController/getData/$2';
+$route['monev/evaluasi/create'] = 'monev/EvaluasiController/action/create';
+$route['monev/evaluasi/update'] = 'monev/EvaluasiController/action/update';
+$route['monev/evaluasi/delete'] = 'monev/EvaluasiController/action/delete';
+$route['monev/evaluasi/(:any)/(:any)'] = 'monev/EvaluasiController/view/$1/$2';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

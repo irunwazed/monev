@@ -10,11 +10,12 @@ class EvaluasiController extends CI_Controller {
         $this->load->library('Fungsi');
     }
 
-    public function view(){
+    public function view($kode, $opd){
         $data = array();
-
-        // $this->load->model('monev/DataModel');
-        // $data['dataOpd'] = $this->DataModel->getOpdJenis();
+        $data['kode'] = $kode;
+        $data['opd'] = $opd;
+        $this->load->model('monev/DataModel');
+        $data['dataRpjmd'] = $this->DataModel->getKegiatan($kode);
         // $data['dataOpdPilih'] = $this->DataModel->getOpdWithJenis($this->jenis);
         $foot['script'] = $this->load->view('monev/components/evaluasi/script', $data, true);
 		
@@ -32,7 +33,6 @@ class EvaluasiController extends CI_Controller {
         $status = true;
 		if($status){
             $data = $this->EvaluasiModel->getAll($post);
-
             // $dataAll
             $jumDataAll = $this->EvaluasiModel->getCount($post);
             $jumlahDatainPage = $this->EvaluasiModel->getJumlahInPage();
@@ -51,7 +51,6 @@ class EvaluasiController extends CI_Controller {
 
         echo json_encode($kirim);
     }
-
     
 	public function action($action = ''){
         $post = $this->input->post();

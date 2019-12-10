@@ -1,25 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KegiatanController extends CI_Controller {
+class EvaluasiController2 extends CI_Controller {
     
 	public function __construct()
     {
 		parent::__construct();
-        $this->load->model('monev/KegiatanModel');
+        $this->load->model('monev/EvaluasiModel');
         $this->load->library('Fungsi');
     }
 
-    public function view($kode){
+    public function view(){
         $data = array();
-        $data['kode'] = $kode;
-        $this->load->model('monev/DataModel');
-        $data['dataRpjmd'] = $this->DataModel->getProgram($kode);
+
+        // $this->load->model('monev/DataModel');
+        // $data['dataOpd'] = $this->DataModel->getOpdJenis();
         // $data['dataOpdPilih'] = $this->DataModel->getOpdWithJenis($this->jenis);
-        $foot['script'] = $this->load->view('monev/components/kegiatan/script', $data, true);
+        $foot['script'] = $this->load->view('monev/components/evaluasi2/script', $data, true);
 		
         $this->load->view('monev/include/head');
-        $this->load->view('monev/components/kegiatan/data', $data);
+        $this->load->view('monev/components/evaluasi2/data', $data);
         $this->load->view('monev/include/foot', $foot);
 	}
 
@@ -31,10 +31,11 @@ class KegiatanController extends CI_Controller {
         // $status = $this->filter->cekLogin($this->arr);
         $status = true;
 		if($status){
-            $data = $this->KegiatanModel->getAll($post);
+            $data = $this->EvaluasiModel->getAll($post);
+
             // $dataAll
-            $jumDataAll = $this->KegiatanModel->getCount($post);
-            $jumlahDatainPage = $this->KegiatanModel->getJumlahInPage();
+            $jumDataAll = $this->EvaluasiModel->getCount($post);
+            $jumlahDatainPage = $this->EvaluasiModel->getJumlahInPage();
             $jumlahPage = ceil($jumDataAll/$jumlahDatainPage);
 		}else{
             $data = array();
@@ -50,6 +51,7 @@ class KegiatanController extends CI_Controller {
 
         echo json_encode($kirim);
     }
+
     
 	public function action($action = ''){
         $post = $this->input->post();
@@ -60,7 +62,7 @@ class KegiatanController extends CI_Controller {
 			'status' => false,
         );
         if($status){
-            $result = $this->KegiatanModel->$action($post);
+            $result = $this->EvaluasiModel->$action($post);
         }
         $kirim = $result;
 		echo json_encode($kirim);

@@ -1,18 +1,17 @@
 <script>
-    var link = "monev/kegiatan";
+    var link = "monev/evaluasi2";
     var myTable = $('#table-user').DataTable({
-      "pageLength": 10,
+      "pageLength": 3,
       "paging": true,
       "lengthChange": false,
       "searching": true,
-      "ordering": true,
+      "ordering": false,
       "info": true,
       "autoWidth": true,
     });
     var page = 1;
     var dataAll = [];
     var setId;
-    var setKode = "<?=$kode?>";
 
     getData();
     function getData(_page = 1){
@@ -21,7 +20,6 @@
         let url = base_url+link+"/page-"+page;
         let data = {
             page : page,
-            kode : setKode,
         }
         $.when(sendAjax(url, data)).done(function(respon){
             if(respon.status){
@@ -38,17 +36,34 @@
         myTable.clear().draw();
         no = 1;
         data.forEach(element => {
-            let myCodeLink = element['tb_rpjmd_misi_kode']+"-"+element['tb_rpjmd_tujuan_kode']+"-"+element['tb_rpjmd_sasaran_kode']+"-"+element['tb_rpjmd_program_kode']+"-"+element['tb_renstra_kegiatan_kode'];
-            let myOpdLink = element['tb_urusan_kode']+"-"+element['tb_bidang_kode']+"-"+element['tb_unit_kode']+"-"+element['tb_sub_unit_kode'];
-            let myCode = myCodeLink.replace(/-/g, '.');
             tempData = [
                 no,
-                myCode,
-                '<a href="'+base_url+'monev/evaluasi/'+myCodeLink+'/'+myOpdLink+'">'+element['tb_renstra_kegiatan_nama']+'</a>',
+                element['tb_rpjmd_sasaran_kode'],
+                element['tb_urusan_kode']+"."+element['tb_bidang_kode']+"."+element['tb_unit_kode']+"."+element['tb_sub_unit_kode'],
+                element['tb_renstra_kegiatan_nama'],
                 element['tb_renstra_kegiatan_indikator'],
-                element['tb_sub_unit_nama'],
-                // '<a class="fa fa-edit" style="padding:5px;" href="#" onclick="setUpdate('+element['id_tb_user']+')" data-toggle="modal" data-target="#modal-form" > </a>'+
-                // '<a class="fa fa-trash" style="padding:5px;" href="#"  data-setFunction="doDelete('+element['id_tb_user']+')" data-judul="Hapus Data!" data-isi="Apakah anda yakin menghapus data?" onclick="setPesan(this)" data-toggle="modal" data-target="#modal-pesan"></a>',
+                element['tb_renstra_kegiatan_target1'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                element['tb_renstra_kegiatan_nama'],
+                '<a class="fa fa-edit" style="padding:5px;" href="#" onclick="setUpdate('+element['id_tb_user']+')" data-toggle="modal" data-target="#modal-form" > </a>'+
+                '<a class="fa fa-trash" style="padding:5px;" href="#"  data-setFunction="doDelete('+element['id_tb_user']+')" data-judul="Hapus Data!" data-isi="Apakah anda yakin menghapus data?" onclick="setPesan(this)" data-toggle="modal" data-target="#modal-pesan"></a>',
             ]
             myTable.row.add(tempData).draw(  );
             no++;

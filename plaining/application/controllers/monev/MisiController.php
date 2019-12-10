@@ -13,8 +13,8 @@ class MisiController extends CI_Controller {
     public function view(){
         $data = array();
 
-        // $this->load->model('monev/DataModel');
-        // $data['dataOpd'] = $this->DataModel->getOpdJenis();
+        $this->load->model('monev/DataModel');
+        $data['dataRpjmd'] = $this->DataModel->getVisi($_SESSION['rpjmd']);
         // $data['dataOpdPilih'] = $this->DataModel->getOpdWithJenis($this->jenis);
         $foot['script'] = $this->load->view('monev/components/misi/script', $data, true);
 		

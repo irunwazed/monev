@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2019 at 08:47 AM
+-- Generation Time: Dec 10, 2019 at 04:36 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -1136,6 +1136,18 @@ CREATE TABLE `tb_monev_triwulan` (
   `id_tb_satuan` int(11) DEFAULT NULL,
   `tb_monev_triwulan_satuan` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_monev_triwulan`
+--
+
+INSERT INTO `tb_monev_triwulan` (`id_tb_monev_triwulan`, `tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_sub_unit_kode`, `id_tb_rpjmd`, `tb_rpjmd_misi_kode`, `tb_rpjmd_tujuan_kode`, `tb_rpjmd_sasaran_kode`, `tb_rpjmd_program_kode`, `tb_rpjmd_kegiatan_kode`, `tb_monev_triwulan_tahun`, `tb_monev_triwulan_indikator`, `tb_monev_triwulan_target1`, `tb_monev_triwulan_rupiah1`, `tb_monev_triwulan_target2`, `tb_monev_triwulan_rupiah2`, `tb_monev_triwulan_target3`, `tb_monev_triwulan_rupiah3`, `tb_monev_triwulan_target4`, `tb_monev_triwulan_rupiah4`, `id_tb_satuan`, `tb_monev_triwulan_satuan`) VALUES
+(5, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 1, NULL, NULL, 1000000, 77, 1000000, 55, 1000000, 100, 1000000, NULL, NULL),
+(6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, NULL, 100, 1000000, 100, 1000000, 100, 1000000, 100, 1000000, NULL, NULL),
+(7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, NULL, 100, 1000000, 100, 1000000, 100, 1000000, 100, 1000000, NULL, NULL),
+(8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, NULL, 100, 1000000, 100, 1000000, 100, 1000000, 100, 1000000, NULL, NULL),
+(9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, NULL, 100, 1000000, 100, 1000000, 100, 1000000, 100, 1000000, NULL, NULL),
+(10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, NULL, 100, 1000000, 100, 1000000, 100, 1000000, 100, 1000000, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2348,6 +2360,11 @@ ALTER TABLE `tb_misi_rpjmd_lama`
 --
 ALTER TABLE `tb_monev_lra`
   MODIFY `id_tb_monev_lra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=736;
+--
+-- AUTO_INCREMENT for table `tb_monev_triwulan`
+--
+ALTER TABLE `tb_monev_triwulan`
+  MODIFY `id_tb_monev_triwulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tb_musrenbang_grub`
 --

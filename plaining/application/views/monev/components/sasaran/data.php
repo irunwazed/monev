@@ -1,6 +1,6 @@
 <?php
 
-$judul = "Sasaran";
+$judul = "Data Sasaran";
 
 ?>
 <div class="content-wrapper">
@@ -46,6 +46,23 @@ $judul = "Sasaran";
                             <div>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-form" onclick="setCreate()"><i class="fa fas fa-plus"></i> Tambah Data</button> -->
                             </div>
+                            <table>
+                                <tr>
+                                    <td>Visi</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_visi?></td>
+                                </tr>
+                                <tr>
+                                    <td>Misi</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_misi_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tujuan</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_tujuan_nama?></td>
+                                </tr>
+                            </table>
                             
                             <div class="table-responsive">
                             <table id="table-user" class="table table-bordered">

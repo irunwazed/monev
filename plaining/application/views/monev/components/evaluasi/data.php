@@ -1,6 +1,6 @@
 <?php
 
-$judul = "Evaluasi";
+$judul = "Data Evaluasi";
 
 ?>
 <div class="content-wrapper">
@@ -22,6 +22,7 @@ $judul = "Evaluasi";
     </section>
     <section class="content">
         <div class="container-fluid" id="data-load">
+            <a href="<?=base_url("monev/kegiatan/".$kode)?>" class="btn btn-info"><i class="fa fa-arrow-circle-left"></i> Kembali</a>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -32,7 +33,7 @@ $judul = "Evaluasi";
                                         <center>PEMERINTAH KABUPATEN MOROWALI</center>
                                     </h6> -->
                                     <h4>
-                                        <center>Evaluasi Terhadap Hasil RKPD Kabupaten/kota…….. Tahun .... </center>
+                                        <center><?=$judul?></center>
                                     </h4>
                                     <!-- <h6>
                                         <center>TAHUN ANGGARAN <span id="set-tahun"></span></center>
@@ -45,24 +46,54 @@ $judul = "Evaluasi";
                             <div>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-form" onclick="setCreate()"><i class="fa fas fa-plus"></i> Tambah Data</button>
                             </div>
+                            <table>
+                                <tr>
+                                    <td>Visi</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_visi?></td>
+                                </tr>
+                                <tr>
+                                    <td>Misi</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_misi_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tujuan</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_tujuan_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Sasaran</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_sasaran_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Program</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_rpjmd_program_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Dinas</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_sub_unit_nama?></td>
+                                </tr>
+                                <tr>
+                                    <td>Kegiatan</td>
+                                    <td>:</td>
+                                    <td><?=@$dataRpjmd->tb_renstra_kegiatan_nama?></td>
+                                </tr>
+                            </table>
                             
                             <div class="table-responsive">
                             <table id="table-user" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th rowspan="3">No</th>
-                                        <th rowspan="3">Sasaran</th>
-                                        <th rowspan="3">Kode</th>
-                                        <th rowspan="3">Urusan/Bidang Urusan Pemerintahan Daerah Dan Program/Kegiatan </th>
-                                        <th rowspan="3">Indikator  Kinerja Program (Outcome)/ Kegiatan (output) </th>
-                                        <th rowspan="2" colspan="2">Target RPJMD Kabupaten/kota pada Tahun ........ (Akhir Periode RPJMD) </th>
-                                        <th rowspan="2" colspan="2">Realisasi Capaian Kinerja RPJMD Kabupaten/kota sampai dengan RKPD Kabupaten/kota Tahun Lalu  (n-2) </th>
-                                        <th rowspan="2" colspan="2">Target Kinerja dan Anggaran RKPD Kabupaten/kota Tahun Berjalan (Tahun n-1) yang Dievaluasi </th>
-                                        <th colspan="8">Realisasi Kinerja Pada Triwulan </th>
-                                        <th rowspan="2" colspan="2">Realisasi Capaian Kinerja dan Anggaran RKPD Kabupaten/kota yang Dievaluasi </th>
-                                        <th rowspan="2" colspan="2">Realisasi Kinerja dan Anggaran RPJMD Kabupaten/kota s/d Tahun ....... (Akhir Tahun Pelaksanaan RKPD tahun....) </th>
-                                        <th rowspan="2" colspan="2">Tingkat Capaian Kinerja dan Realisasi Anggaran RPJMD Kabupaten/kota  s/d Tahun ... (%) </th>
-                                        <th rowspan="3">Perangkat Daerah  Penanggung Jawab </th>
+                                        <th rowspan="3">OPD</th>
+                                        <th rowspan="3">Kegiatan</th>
+                                        <th rowspan="3">Tahun Ke-</th>
+                                        <th colspan="8">Evaluasi</th>
+                                        <th rowspan="3">Aksi</th>
                                     </tr>
                                     <tr>
                                         <th colspan="2">I</th>
@@ -71,41 +102,14 @@ $judul = "Evaluasi";
                                         <th colspan="2">IV</th>
                                     </tr>
                                     <tr>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                        <th>K</th>
-                                        <th>Rp</th>
-                                    </tr>
-                                    <tr>
-                                        <?php
-                                        for ($i = 1; $i <= 16; $i++) { 
-                                        if($i >= 6 && $i <= 15){
-                                        ?>
-                                            <th colspan="2"><center><?= $i; ?></center></th>
-                                        <?php 
-                                        }else{
-                                        ?>
-                                            <th><center><?= $i; ?></center></th>
-                                        <?php 
-                                        }
-                                        }
-                                        ?>
+                                        <th>Target</th>
+                                        <th>Realisasi</th>
+                                        <th>Target</th>
+                                        <th>Realisasi</th>
+                                        <th>Target</th>
+                                        <th>Realisasi</th>
+                                        <th>Target</th>
+                                        <th>Realisasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,34 +136,45 @@ $judul = "Evaluasi";
             </div>
             <div class="modal-body">
                 <form action="" method="post" id="form-action">
-                    <input type="hidden" name="id_tb_user">
+                    <input type="hidden" name="id_tb_monev_triwulan">
+                    <input type="hidden" name="opd" value="<?=$opd?>">
+                    <input type="hidden" name="kode" value="<?=$kode?>">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <p>Username</p>
-                                <input type="text" name="tb_user_username" class="form-control" placeholder="Username" required autofocus>  
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <p>Nomor Hp</p>
-                                <input type="text" name="tb_user_hp" class="form-control" placeholder="Nomor Hp" required autofocus>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <p>Password</p>
-                                <input type="password" name="tb_user_password" class="form-control" placeholder="Password" required autofocus>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <p>Level</p>
-                                <select name="tb_user_level" class="form-control" required autofocus>
-                                    <option value="">Pilih Level</option>
+                                <p>Tahun</p>
+                                <select name="tahun" class="form-control" required autofocus>
+                                    <option value="">-= Pilih Tahun Ke =-</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <p>Triwulan</p>
+                                <select name="triwulan" class="form-control" required autofocus>
+                                    <option value="">-= Pilih Triwulan =-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <p>Target</p>
+                                <input type="number" name="target" class="form-control" placeholder="Target" required autofocus>  
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <p>Realisasi</p>
+                                <input type="number" name="realisasi" class="form-control" placeholder="Realisasi" required autofocus>
                             </div>
                         </div>
                     </div>

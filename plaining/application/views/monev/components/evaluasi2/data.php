@@ -1,6 +1,7 @@
 <?php
 
-$judul = "Data Misi";
+$judul = "Evaluasi";
+
 ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -21,7 +22,6 @@ $judul = "Data Misi";
     </section>
     <section class="content">
         <div class="container-fluid" id="data-load">
-            <!-- <a href="<?=base_url("monev/program/".$kode)?>" class="btn btn-info"><i class="fa fa-arrow-circle-left"></i> Kembali</a> -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -32,7 +32,7 @@ $judul = "Data Misi";
                                         <center>PEMERINTAH KABUPATEN MOROWALI</center>
                                     </h6> -->
                                     <h4>
-                                        <center><?=$judul?></center>
+                                        <center>Evaluasi Terhadap Hasil RKPD Kabupaten/kota…….. Tahun .... </center>
                                     </h4>
                                     <!-- <h6>
                                         <center>TAHUN ANGGARAN <span id="set-tahun"></span></center>
@@ -43,23 +43,69 @@ $judul = "Data Misi";
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div>
-                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-form" onclick="setCreate()"><i class="fa fas fa-plus"></i> Tambah Data</button> -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-form" onclick="setCreate()"><i class="fa fas fa-plus"></i> Tambah Data</button>
                             </div>
-                            <table>
-                                <tr>
-                                    <td>Visi</td>
-                                    <td>:</td>
-                                    <td><?=$dataRpjmd->tb_rpjmd_visi?></td>
-                                </tr>
-                            </table>
+                            
                             <div class="table-responsive">
                             <table id="table-user" class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Kode</th>
-                                        <th>Misi</th>
-                                        <!-- <th>Aksi</th> -->
+                                        <th rowspan="3">No</th>
+                                        <th rowspan="3">Sasaran</th>
+                                        <th rowspan="3">Kode</th>
+                                        <th rowspan="3">Urusan/Bidang Urusan Pemerintahan Daerah Dan Program/Kegiatan </th>
+                                        <th rowspan="3">Indikator  Kinerja Program (Outcome)/ Kegiatan (output) </th>
+                                        <th rowspan="2" colspan="2">Target RPJMD Kabupaten/kota pada Tahun ........ (Akhir Periode RPJMD) </th>
+                                        <th rowspan="2" colspan="2">Realisasi Capaian Kinerja RPJMD Kabupaten/kota sampai dengan RKPD Kabupaten/kota Tahun Lalu  (n-2) </th>
+                                        <th rowspan="2" colspan="2">Target Kinerja dan Anggaran RKPD Kabupaten/kota Tahun Berjalan (Tahun n-1) yang Dievaluasi </th>
+                                        <th colspan="8">Realisasi Kinerja Pada Triwulan </th>
+                                        <th rowspan="2" colspan="2">Realisasi Capaian Kinerja dan Anggaran RKPD Kabupaten/kota yang Dievaluasi </th>
+                                        <th rowspan="2" colspan="2">Realisasi Kinerja dan Anggaran RPJMD Kabupaten/kota s/d Tahun ....... (Akhir Tahun Pelaksanaan RKPD tahun....) </th>
+                                        <th rowspan="2" colspan="2">Tingkat Capaian Kinerja dan Realisasi Anggaran RPJMD Kabupaten/kota  s/d Tahun ... (%) </th>
+                                        <th rowspan="3">Perangkat Daerah  Penanggung Jawab </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">I</th>
+                                        <th colspan="2">II</th>
+                                        <th colspan="2">III</th>
+                                        <th colspan="2">IV</th>
+                                    </tr>
+                                    <tr>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                        <th>K</th>
+                                        <th>Rp</th>
+                                    </tr>
+                                    <tr>
+                                        <?php
+                                        for ($i = 1; $i <= 16; $i++) { 
+                                        if($i >= 6 && $i <= 15){
+                                        ?>
+                                            <th colspan="2"><center><?= $i; ?></center></th>
+                                        <?php 
+                                        }else{
+                                        ?>
+                                            <th><center><?= $i; ?></center></th>
+                                        <?php 
+                                        }
+                                        }
+                                        ?>
                                     </tr>
                                 </thead>
                                 <tbody>

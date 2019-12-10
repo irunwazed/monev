@@ -7,27 +7,39 @@ class EvaluasiModel extends CI_Model
     {
         parent::__construct();
         $this->jumlah = 20;
-        $this->table = 'tb_renstra_kegiatan';
+        $this->table = 'tb_monev_triwulan';
     }
 
     public function setQuery($post){
-        $this->db->select("tb_renstra_kegiatan.*, tb_monev_triwulan.tb_monev_triwulan_tahun, tb_monev_triwulan.tb_monev_triwulan_indikator
-                                            , tb_monev_triwulan.tb_monev_triwulan_target1, tb_monev_triwulan.tb_monev_triwulan_rupiah1
-                                            , tb_monev_triwulan.tb_monev_triwulan_target2, tb_monev_triwulan.tb_monev_triwulan_rupiah2
-                                            , tb_monev_triwulan.tb_monev_triwulan_target3, tb_monev_triwulan.tb_monev_triwulan_rupiah3
-                                            , tb_monev_triwulan.tb_monev_triwulan_target4, tb_monev_triwulan.tb_monev_triwulan_rupiah4");
-        $this->db->join('tb_monev_triwulan', 'tb_renstra_kegiatan.id_tb_rpjmd = tb_monev_triwulan.id_tb_rpjmd
+
+        $this->db->select("tb_monev_triwulan.*, tb_sub_unit.tb_sub_unit_nama, tb_renstra_kegiatan.tb_renstra_kegiatan_nama");
+
+        $kode = explode("-", $post['kode']);
+        $this->db->where("tb_monev_triwulan.tb_rpjmd_misi_kode", $kode[0]);
+        $this->db->where("tb_monev_triwulan.tb_rpjmd_tujuan_kode", $kode[1]);
+        $this->db->where("tb_monev_triwulan.tb_rpjmd_sasaran_kode", $kode[2]);
+        $this->db->where("tb_monev_triwulan.tb_rpjmd_program_kode", $kode[3]);
+        $this->db->where("tb_monev_triwulan.tb_rpjmd_kegiatan_kode", $kode[4]);
+
+        $opd = explode("-", $post['opd']);
+        $this->db->where("tb_monev_triwulan.tb_urusan_kode", $opd[0]);
+        $this->db->where("tb_monev_triwulan.tb_bidang_kode", $opd[1]);
+        $this->db->where("tb_monev_triwulan.tb_bidang_kode", $opd[2]);
+        $this->db->where("tb_monev_triwulan.tb_sub_unit_kode", $opd[3]);
+
+        
+        $this->db->join('tb_sub_unit', 'tb_sub_unit.tb_urusan_kode = tb_monev_triwulan.tb_urusan_kode
+                                    AND tb_sub_unit.tb_bidang_kode = tb_monev_triwulan.tb_bidang_kode
+                                    AND tb_sub_unit.tb_unit_kode = tb_monev_triwulan.tb_unit_kode
+                                    AND tb_sub_unit.tb_sub_unit_kode = tb_monev_triwulan.tb_sub_unit_kode');
+                                    
+        $this->db->join('tb_renstra_kegiatan', 'tb_renstra_kegiatan.id_tb_rpjmd = tb_monev_triwulan.id_tb_rpjmd
                                             AND tb_renstra_kegiatan.tb_rpjmd_misi_kode = tb_monev_triwulan.tb_rpjmd_misi_kode
                                             AND tb_renstra_kegiatan.tb_rpjmd_tujuan_kode = tb_monev_triwulan.tb_rpjmd_tujuan_kode
                                             AND tb_renstra_kegiatan.tb_rpjmd_sasaran_kode = tb_monev_triwulan.tb_rpjmd_sasaran_kode
                                             AND tb_renstra_kegiatan.tb_rpjmd_program_kode = tb_monev_triwulan.tb_rpjmd_program_kode
                                             AND tb_renstra_kegiatan.tb_renstra_kegiatan_kode = tb_monev_triwulan.tb_rpjmd_kegiatan_kode', 'left');
-        // $this->db->join('tb_rpjmd_program_indikator', 'tb_rpjmd_program_indikator.id_tb_rpjmd = tb_renstra_kegiatan.id_tb_rpjmd
-        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_misi_kode = tb_renstra_kegiatan.tb_rpjmd_misi_kode
-        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_tujuan_kode = tb_renstra_kegiatan.tb_rpjmd_tujuan_kode
-        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_sasaran_kode = tb_renstra_kegiatan.tb_rpjmd_sasaran_kode
-        //                                             AND tb_rpjmd_program_indikator.tb_rpjmd_program_kode = tb_renstra_kegiatan.tb_rpjmd_program_kode');
-        // $this->db->where('tb_user_akun', 7);
+
     }
 
     public function getCount($post = array()){
@@ -57,15 +69,42 @@ class EvaluasiModel extends CI_Model
         $pesan = "Gagal Menambah Data";
         $status = False;
         if($this->cekInput($post)){
-            $post['tb_user_password'] = $this->fungsi->password_hash($post['tb_user_password']);
+            $kode = explode("-", $post['kode']);
+            $opd = explode("-", $post['opd']);
+
+            $triwulan = $post['triwulan'];
             $data = array(
-                'tb_user_username' => $post['tb_user_username'],
-                'tb_user_password' => $post['tb_user_password'],
-                'tb_user_hp' => $post['tb_user_hp'],
-                'tb_user_akun' => 7,
-                'tb_user_level' => $post['tb_user_level'],
+                'id_tb_rpjmd' => $_SESSION['rpjmd'],
+                'tb_rpjmd_misi_kode' => $kode[0],
+                'tb_rpjmd_tujuan_kode' => $kode[1],
+                'tb_rpjmd_sasaran_kode' => $kode[2],
+                'tb_rpjmd_program_kode' => $kode[3],
+                'tb_rpjmd_kegiatan_kode' => $kode[4],
+                'tb_urusan_kode' => $opd[0],
+                'tb_bidang_kode' => $opd[1],
+                'tb_unit_kode' => $opd[2],
+                'tb_sub_unit_kode' => $opd[3],
+                'tb_monev_triwulan_tahun' => $post['tahun'],
             );
-            $status = $this->db->insert($this->table, $data);
+
+            $this->db->where($data);
+            $dataGet = $this->db->get($this->table, $data)->result_array();
+            
+            if(count($dataGet) > 0){
+                
+                $this->db->where('id_tb_monev_triwulan', $dataGet[0]['id_tb_monev_triwulan']);
+
+                $data2['tb_monev_triwulan_target'.$triwulan] = $post['target'];
+                $data2['tb_monev_triwulan_rupiah'.$triwulan] = $post['realisasi'];
+                
+                $status = $this->db->update($this->table, $data2);
+            }else{
+                $data['tb_monev_triwulan_target'.$triwulan] = $post['target'];
+                $data['tb_monev_triwulan_rupiah'.$triwulan] = $post['realisasi'];
+    
+                $status = $this->db->insert($this->table, $data);
+            }
+
 
             if($status)
                 $pesan = "Berhasil Menambah Data";
@@ -86,21 +125,16 @@ class EvaluasiModel extends CI_Model
         
         if($this->cekInput($post)){
 
-            $data = array(
-                'tb_user_username' => $post['tb_user_username'],
-                'tb_user_hp' => $post['tb_user_hp'],
-                'tb_user_akun' => 7,
-                'tb_user_level' => $post['tb_user_level'],
-            );
-            $this->db->where('id_tb_user', $post['id_tb_user']);
-            $query = $this->db->get($this->table)->result_array();
+            $kode = explode("-", $post['kode']);
+            $opd = explode("-", $post['opd']);
 
-            if(@$query[0]['tb_user_password'] != $post['tb_user_password']){
-                $post['tb_user_password'] = $this->fungsi->password_hash($post['tb_user_password']);
-                $data['tb_user_password'] = $post['tb_user_password'];
-            }
+            $triwulan = $post['triwulan'];
+            
+            $data['tb_monev_triwulan_target'.$triwulan] = $post['target'];
+            $data['tb_monev_triwulan_rupiah'.$triwulan] = $post['realisasi'];
 
-            $this->db->where('id_tb_user', $post['id_tb_user']);
+
+            $this->db->where('id_tb_monev_triwulan', $post['id_tb_monev_triwulan']);
             $status = $this->db->update($this->table, $data);
             if($status)
                 $pesan = "Berhasil Mengubah Data";
@@ -119,7 +153,7 @@ class EvaluasiModel extends CI_Model
         $status = False;
         
         if($this->cekInput($post)){
-            $this->db->where('id_tb_user', $post['kode']);
+            $this->db->where('id_tb_monev_triwulan', $post['kode']);
             $status = $this->db->delete($this->table);
             if($status)
                 $pesan = "Berhasil Menghapus Data";

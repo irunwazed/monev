@@ -61,7 +61,7 @@ class LoginController extends CI_Controller {
             "status" => false,
         );
         $this->session->set_flashdata('pesan', $pesan);
-        // redirect(base_url()."monev/login");
+        redirect(base_url()."monev/login");
     }
 
     public function logout(){

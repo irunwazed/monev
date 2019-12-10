@@ -15,7 +15,16 @@ class LoginController extends CI_Controller {
     }
     
     public function beranda(){
+
+        
         $data = array();
+        $this->load->model('monev/DataModel');
+
+        $data['jumOPD'] = $this->DataModel->getJumlahOPD();
+        $data['jumProgram'] = $this->DataModel->getJumlahProgram();
+        $data['jumKegiatan'] = $this->DataModel->getJumlahKegiatan();
+        $data['jumUser'] = $this->DataModel->getJumlahUser();
+
         $foot = array();
         $this->load->view('monev/include/head');
         $this->load->view('monev/components/beranda/data', $data);

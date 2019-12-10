@@ -28,7 +28,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3><?=$jumOPD?></h3>
 
                             <p>OPD</p>
                         </div>
@@ -43,7 +43,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>302</h3>
+                            <h3><?=$jumProgram?></h3>
 
                             <p>Program</p>
                         </div>
@@ -58,7 +58,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>1029</h3>
+                            <h3><?=$jumKegiatan?></h3>
 
                             <p>Kegiatan</p>
                         </div>
@@ -73,7 +73,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>4</h3>
+                            <h3><?=$jumUser?></h3>
 
                             <p>Pengguna</p>
                         </div>

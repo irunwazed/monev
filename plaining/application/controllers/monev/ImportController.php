@@ -14,11 +14,11 @@ class ImportController extends CI_Controller {
         echo '<form action="importRek" method="POST"  enctype="multipart/form-data">
             <input type="file" name="file" />
             <select  name="table">
-                <option>sotk_urusan</option>
-                <option>sotk_bidang</option>
-                <option>sotk_unit</option>
-                <option>sotk_sub_unit</option>
-                <option>tb_monev_lra</option>
+                <option>tb_urusan</option>
+                <option>tb_fungsi</option>
+                <option>tb_bidang</option>
+                <option>tb_unit</option>
+                <option>tb_sub_unit</option>
             </select>
             <input type="submit"  />
             </form>';
@@ -255,40 +255,49 @@ class ImportController extends CI_Controller {
         }
     }
 
-    public function sotk_urusan($set, $table = null){
+    public function tb_urusan($set, $table = null){
         $this->data = array(
-            "urusan_kode" => (string)$set[0], 
-            "urusan_nama" => (string)$set[1], 
+            "tb_urusan_kode" => (string)$set[0], 
+            "tb_urusan_nama" => (string)$set[1], 
         );
         $this->db->insert($table, $this->data);
     }
 
-    public function sotk_bidang($set, $table = null){
+    public function tb_fungsi($set, $table = null){
         $this->data = array(
-            "urusan_kode" => (string)$set[0],
-            "bidang_kode" => (string)$set[1], 
-            "bidang_nama" => (string)$set[2], 
+            "tb_fungsi_kode" => (string)$set[0], 
+            "tb_fungsi_nama" => (string)$set[1], 
         );
         $this->db->insert($table, $this->data);
     }
 
-    public function sotk_unit($set, $table = null){
+    public function tb_bidang($set, $table = null){
         $this->data = array(
-            "urusan_kode" => (string)$set[0],
-            "bidang_kode" => (string)$set[1],
-            "unit_kode" => (string)$set[2], 
-            "unit_nama" => (string)$set[3], 
+            "tb_urusan_kode" => (string)$set[0],
+            "tb_bidang_kode" => (string)$set[1], 
+            "tb_bidang_nama" => (string)$set[2], 
+            "tb_fungsi_kode" => (string)$set[3],
         );
         $this->db->insert($table, $this->data);
     }
 
-    public function sotk_sub_unit($set, $table = null){
+    public function tb_unit($set, $table = null){
         $this->data = array(
-            "urusan_kode" => (string)$set[0],
-            "bidang_kode" => (string)$set[1],
-            "unit_kode" => (string)$set[2], 
-            "sub_unit_kode" => (string)$set[3], 
-            "sub_unit_nama" => (string)$set[4], 
+            "tb_urusan_kode" => (string)$set[0],
+            "tb_bidang_kode" => (string)$set[1],
+            "tb_unit_kode" => (string)$set[2], 
+            "tb_unit_nama" => (string)$set[3], 
+        );
+        $this->db->insert($table, $this->data);
+    }
+
+    public function tb_sub_unit($set, $table = null){
+        $this->data = array(
+            "tb_urusan_kode" => (string)$set[0],
+            "tb_bidang_kode" => (string)$set[1],
+            "tb_unit_kode" => (string)$set[2], 
+            "tb_sub_unit_kode" => (string)$set[3], 
+            "tb_sub_unit_nama" => (string)$set[4], 
         );
         $this->db->insert($table, $this->data);
     }

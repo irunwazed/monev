@@ -178,4 +178,27 @@ class DataModel extends CI_Model
         return $data;
     }
 
+    public function getJumlahOPD(){
+        $data = $this->db->get('tb_sub_unit')->num_rows();
+        return $data;
+    }
+
+    public function getJumlahProgram(){
+        $this->db->where("tb_rpjmd_program.id_tb_rpjmd", $_SESSION['rpjmd']);
+        $data = $this->db->get('tb_rpjmd_program')->num_rows();
+        return $data;
+    }
+
+    public function getJumlahKegiatan(){
+        $this->db->where("tb_renstra_kegiatan.id_tb_rpjmd", $_SESSION['rpjmd']);
+        $data = $this->db->get('tb_renstra_kegiatan')->num_rows();
+        return $data;
+    }
+
+    public function getJumlahUser(){
+        $this->db->where("tb_user.tb_user_akun", 7);
+        $data = $this->db->get('tb_user')->num_rows();
+        return $data;
+    }
+
 }

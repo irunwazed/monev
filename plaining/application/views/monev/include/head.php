@@ -281,22 +281,64 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="<?=base_url("monev/rpjmd/laporan/misi-tujuan-sasaran")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Laporan Misi Tujuan Sasaran</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/rpjmd/laporan/skpd")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Laporan SKPD</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="<?=base_url("monev/evaluasi/laporan")?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Laporan</p>
+                    <p>Laporan Evaluasi</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
               <a href="<?=base_url("monev/user")?>" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon ion ion-person-add"></i>
                 <p>
                   User
                   <span></span>
                 </p>
               </a>
             </li>
+            <!-- RPJMD Laporan -->
+            <!-- <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tree"></i>
+                <p>
+                  Laporan RPJMD
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              
+              <ul class="nav nav-treeview">
+                
+              <li class="nav-item">
+                  <a href="<?=base_url("monev/rpjmd/laporan/misi-tujuan-sasaran")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Misi Tujuan Sasaran</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/rpjmd/laporan/skpd")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SKPD</p>
+                  </a>
+                </li>
+                
+              </ul>
+            
+            </li> -->
+            <!-- end RPJMD Laporan -->
             
             <!-- <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">

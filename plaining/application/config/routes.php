@@ -109,6 +109,13 @@ $route['monev/evaluasi/update'] = 'monev/EvaluasiController/action/update';
 $route['monev/evaluasi/delete'] = 'monev/EvaluasiController/action/delete';
 $route['monev/evaluasi/(:any)/(:any)'] = 'monev/EvaluasiController/view/$1/$2';
 
+$route['monev/rpjmd/session'] = 'monev/rpjmd/LaporanMTSController/sessionCoba';
+
+$route['monev/rpjmd/laporan/misi-tujuan-sasaran'] = 'monev/rpjmd/LaporanMTSController/view';
+$route['monev/rpjmd/laporan/misi-tujuan-sasaran/save/(:any)'] = 'monev/rpjmd/LaporanMTSController/cetak/$1';
+
+$route['monev/rpjmd/laporan/skpd'] = 'monev/rpjmd/LaporanSKPDController/view';
+$route['monev/rpjmd/laporan/skpd/save/(:any)'] = 'monev/rpjmd/LaporanSKPDController/cetak/$1';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

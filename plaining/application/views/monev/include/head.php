@@ -217,7 +217,7 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
             <img src="<?=base_url()?>public/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">Administrator</a>
           </div>
         </div>
 
@@ -278,6 +278,12 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
                   <a href="<?=base_url("monev/misi")?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Penyusunan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=base_url("monev/evaluasi/laporan")?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Laporan</p>
                   </a>
                 </li>
               </ul>

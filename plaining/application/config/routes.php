@@ -100,11 +100,15 @@ $route['monev/kegiatan/page-(:num)'] = 'monev/KegiatanController/getData/$2';
 $route['monev/kegiatan/(:any)'] = 'monev/KegiatanController/view/$1';
 
 
+$route['monev/evaluasi/laporan'] = 'monev/DataEvaluasiContoller/view';
+$route['monev/evaluasi/save/(:any)'] = 'monev/DataEvaluasiContoller/cetak/$1';
+
 $route['monev/evaluasi/page-(:num)'] = 'monev/EvaluasiController/getData/$2';
 $route['monev/evaluasi/create'] = 'monev/EvaluasiController/action/create';
 $route['monev/evaluasi/update'] = 'monev/EvaluasiController/action/update';
 $route['monev/evaluasi/delete'] = 'monev/EvaluasiController/action/delete';
 $route['monev/evaluasi/(:any)/(:any)'] = 'monev/EvaluasiController/view/$1/$2';
+
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

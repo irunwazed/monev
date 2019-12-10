@@ -40,7 +40,11 @@ class DataModel extends CI_Model
         return $data;
     }
 
-    
+    public function getStatusRpjmd(){
+        $this->db->where("tb_rpjmd.id_tb_rpjmd", $_SESSION['rpjmd']);
+        $data = $this->db->get("tb_rpjmd")->row();
+        return $data;
+    }
 
     public function getRpjmdTahun(){
         $data = $this->db->get("tb_sub_unit")->result_array();

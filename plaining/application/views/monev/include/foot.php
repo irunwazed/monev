@@ -25,10 +25,10 @@
   <div class="loading" style="display: none;">Loading&#8230;</div>
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2019 <a href="https://www.instagram.com/codexv.group/">BAPPEDA MOROWALI</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.2-pre
+      <b>Version</b> 1.0
     </div>
   </footer>
 

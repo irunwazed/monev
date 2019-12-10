@@ -4,7 +4,7 @@
     $styleRight = 'style="border: 1px solid #aaaaaa; padding: 10px; text-align: right;"';
     $styleEdit = 'border: 1px solid #aaaaaa; padding: 10px; ';
    
-    $name = "INDIKATOR CAPAIAN TAHUN ";
+    $name = "LAPORAN REALISASI ANGGARAN PENDAPATAN DAN BELANJA DAERAH";
     // echo "<pre>";
     // print_r($data);
     // echo "</pre>";
@@ -41,7 +41,7 @@
             <div style="width: 90%; text-align: center; float:left">
                 <h6>PEMERINTAH KABUPATEN MOROWALI</h6>
                 <h4>LAPORAN REALISASI ANGGARAN PENDAPATAN DAN BELANJA DAERAH</h4>
-                <h6>TAHUN ANGGARAN <span id="set-tahun"></span></h6>
+                <h6>TAHUN ANGGARAN <span id="set-tahun"><?=@$post['cetaktahun']?></span></h6>
             </div>
         </div>
         <div>

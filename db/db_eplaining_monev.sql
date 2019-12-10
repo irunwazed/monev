@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 04:36 AM
+-- Generation Time: Dec 10, 2019 at 03:43 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -42,7 +42,28 @@ CREATE TABLE `tb_bidang` (
 INSERT INTO `tb_bidang` (`tb_urusan_kode`, `tb_bidang_kode`, `tb_bidang_nama`, `tb_fungsi_kode`) VALUES
 (1, 1, 'Pendidikan', 10),
 (1, 2, 'Kesehatan', 7),
-(1, 3, 'Pekerjaan Umum dan Penataan Ruang', 6);
+(1, 3, 'Pekerjaan Umum dan Penataan Ruang', 6),
+(1, 4, 'Perumahan Rakyat dan Kawasan Pemukiman', 6),
+(1, 5, 'Ketentraman dan Ketertiban Umum serta Perlindungan Masyarakat', 3),
+(1, 6, 'Sosial', 11),
+(2, 1, 'Tenaga Kerja', 4),
+(2, 5, 'Lingkungan Hidup', 5),
+(2, 6, 'Administrasi Kependudukan dan Capil', 11),
+(2, 7, 'Pemberdayaan Masyarakat Desa', 4),
+(2, 9, 'Perhubungan', 4),
+(2, 10, 'Komunikasi dan Informatika', 1),
+(2, 11, 'Koperasi, Usaha Kecil dan Menengah', 4),
+(2, 12, 'Penanaman Modal', 4),
+(2, 13, 'Kepemudaan dan Olah Raga', 10),
+(2, 17, 'Perpustakaan', 10),
+(3, 1, 'Kelautan dan Perikanan', 4),
+(3, 3, 'Pertanian', 4),
+(3, 6, 'Perdagangan', 4),
+(4, 1, 'Penunjang Administrasi Pemerintahan', 1),
+(4, 2, 'Penunjang Pengawasan', 1),
+(4, 3, 'Penunjang Perencanaan', 1),
+(4, 4, 'Penunjang Keuangan ', 1),
+(4, 5, 'Penunjang Kepegawaian', 1);
 
 -- --------------------------------------------------------
 
@@ -1774,7 +1795,51 @@ CREATE TABLE `tb_sub_unit` (
 INSERT INTO `tb_sub_unit` (`tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_sub_unit_kode`, `tb_sub_unit_nama`) VALUES
 (1, 1, 1, 1, 'Dinas Pendidikan Dan Kebudayaan'),
 (1, 2, 1, 1, 'Dinas Kesehatan, Pengendalian Penduduk dan Keluarga Berencana'),
-(1, 3, 1, 1, 'Dinas Pekerjaan Umum dan Penataan Ruang ');
+(1, 3, 1, 1, 'Dinas Pekerjaan Umum dan Penataan Ruang '),
+(1, 4, 1, 1, 'Dinas Perumahan, Kawasan Pemukiman dan Pertanahan'),
+(1, 5, 1, 1, 'Badan Kesatuan Bangsa dan Politik Daerah'),
+(1, 5, 2, 1, 'Satuan Polisi Pamong Praja'),
+(1, 6, 1, 1, 'Dinas Sosial'),
+(1, 6, 2, 1, 'Badan Koordinasi Penanggulangan Bencana Daerah'),
+(2, 1, 1, 1, 'Dinas Tenaga Kerja Dan Transmigrasi Daerah'),
+(2, 5, 1, 1, 'Dinas Lingkungan Hidup Daerah'),
+(2, 6, 1, 1, 'Dinas Kependudukan dan Pencatatan Sipil Daerah'),
+(2, 7, 1, 1, 'Dinas Pemberdayaan Masyarakat, Desa,Pemberdayaan Perempuan dan Perlindungan Anak'),
+(2, 9, 1, 1, 'Dinas Perhubungan Daerah'),
+(2, 10, 1, 1, 'Dinas Komunikasi dan Informatika'),
+(2, 11, 1, 1, 'Dinas Koperasi, Usaha Kecil, dan Menengah'),
+(2, 12, 1, 1, 'Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu'),
+(2, 13, 1, 1, 'Dinas Pemuda, Olahraga dan Pariwisata Daerah'),
+(2, 17, 1, 1, 'Dinas Perpustakaan Daerah'),
+(3, 1, 1, 1, 'Dinas Perikanan Daerah'),
+(3, 3, 1, 1, 'Dinas Pertanian Dan Ketahanan Pangan'),
+(3, 6, 1, 1, 'Dinas Perdagangan Dan Perindustrian'),
+(4, 1, 1, 1, 'Dewan Perwakilan Rakyat Daerah'),
+(4, 1, 2, 1, 'Kepala Daerah Dan Wakil Kepala Daerah'),
+(4, 1, 3, 1, 'Bagian Umum Dan Protokoler'),
+(4, 1, 3, 2, 'Bagian Hukum Dan Perundang-Undangan'),
+(4, 1, 3, 3, 'Bagian Kesejahteraan Rakyat Dan Kemasyarakatan'),
+(4, 1, 3, 4, 'Bagian Perekonomian'),
+(4, 1, 3, 5, 'Bagian Organisasi dan Tata Laksana'),
+(4, 1, 3, 6, 'Bagian Pembangunan Dan LPSE'),
+(4, 1, 3, 7, 'Bagian Unit Layanan Pengadaan'),
+(4, 1, 3, 8, 'Bagian Administrasi Sumber Daya Alam'),
+(4, 1, 3, 9, 'Bagian Administrasi Pemerintahan Umum'),
+(4, 1, 4, 1, 'Sekretariat DPRD'),
+(4, 1, 9, 1, 'Kecamatan Menui Kepulauan'),
+(4, 1, 10, 1, 'Kecamatan Bungku Selatan'),
+(4, 1, 11, 1, 'Kecamatan Bungku Tengah'),
+(4, 1, 12, 1, 'Kecamatan Bungku Barat'),
+(4, 1, 13, 1, 'Kecamatan Bahodopi'),
+(4, 1, 14, 1, 'Kecamatan Bumi Raya'),
+(4, 1, 15, 1, 'Kecamatan Wita Ponda'),
+(4, 1, 16, 1, 'Kecamatan Bungku Timur'),
+(4, 1, 17, 1, 'Kecamatan Bungku Pesisir'),
+(4, 2, 1, 1, 'Inspektorat Daerah'),
+(4, 3, 1, 1, 'Badan Perencanaan, Penelitian, dan Pengembangan Daerah'),
+(4, 4, 5, 1, 'Badan Pengelola Keuangan dan Aset Daerah'),
+(4, 4, 6, 1, 'Badan Pengelola Pendapatan Daerah'),
+(4, 5, 6, 1, 'Badan Kepegawaian Daerah dan Pengembangan Sumber Daya Manusia');
 
 -- --------------------------------------------------------
 
@@ -1796,7 +1861,43 @@ CREATE TABLE `tb_unit` (
 INSERT INTO `tb_unit` (`tb_urusan_kode`, `tb_bidang_kode`, `tb_unit_kode`, `tb_unit_nama`) VALUES
 (1, 1, 1, 'Dinas Pendidikan Dan Kebudayaan'),
 (1, 2, 1, 'Dinas Kesehatan, Pengendalian Penduduk dan Keluarga Berencana'),
-(1, 3, 1, 'Dinas Pekerjaan Umum dan Penataan Ruang ');
+(1, 3, 1, 'Dinas Pekerjaan Umum dan Penataan Ruang '),
+(1, 4, 1, 'Dinas Perumahan, Kawasan Pemukiman dan Pertanahan'),
+(1, 5, 1, 'Badan Kesatuan Bangsa dan Politik Daerah'),
+(1, 5, 2, 'Satuan Polisi Pamong Praja'),
+(1, 6, 1, 'Dinas Sosial'),
+(1, 6, 2, 'Badan Koordinasi Penanggulangan Bencana Daerah'),
+(2, 1, 1, 'Dinas Tenaga Kerja Dan Transmigrasi Daerah'),
+(2, 5, 1, 'Dinas Lingkungan Hidup Daerah'),
+(2, 6, 1, 'Dinas Kependudukan dan Pencatatan Sipil Daerah'),
+(2, 7, 1, 'Dinas Pemberdayaan Masyarakat, Desa,Pemberdayaan Perempuan dan Perlindungan Anak'),
+(2, 9, 1, 'Dinas Perhubungan Daerah'),
+(2, 10, 1, 'Dinas Komunikasi dan Informatika'),
+(2, 11, 1, 'Dinas Koperasi, Usaha Kecil, dan Menengah'),
+(2, 12, 1, 'Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu'),
+(2, 13, 1, 'Dinas Pemuda, Olahraga dan Pariwisata Daerah'),
+(2, 17, 1, 'Dinas Perpustakaan Daerah'),
+(3, 1, 1, 'Dinas Perikanan Daerah'),
+(3, 3, 1, 'Dinas Pertanian Dan Ketahanan Pangan'),
+(3, 6, 1, 'Dinas Perdagangan Dan Perindustrian'),
+(4, 1, 1, 'Dewan Perwakilan Rakyat Daerah'),
+(4, 1, 2, 'Kepala Daerah Dan Wakil Kepala Daerah'),
+(4, 1, 3, 'Sekretariat Daerah'),
+(4, 1, 4, 'Sekretariat DPRD'),
+(4, 1, 9, 'Kecamatan Menui Kepulauan'),
+(4, 1, 10, 'Kecamatan Bungku Selatan'),
+(4, 1, 11, 'Kecamatan Bungku Tengah'),
+(4, 1, 12, 'Kecamatan Bungku Barat'),
+(4, 1, 13, 'Kecamatan Bahodopi'),
+(4, 1, 14, 'Kecamatan Bumi Raya'),
+(4, 1, 15, 'Kecamatan Wita Ponda'),
+(4, 1, 16, 'Kecamatan Bungku Timur'),
+(4, 1, 17, 'Kecamatan Bungku Pesisir'),
+(4, 2, 1, 'Inspektorat Daerah'),
+(4, 3, 1, 'Badan Perencanaan, Penelitian, dan Pengembangan Daerah'),
+(4, 4, 5, 'Badan Pengelola Keuangan dan Aset Daerah'),
+(4, 4, 6, 'Badan Pengelola Pendapatan Daerah'),
+(4, 5, 6, 'Badan Kepegawaian Daerah dan Pengembangan Sumber Daya Manusia');
 
 -- --------------------------------------------------------
 
